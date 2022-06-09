@@ -10,7 +10,7 @@
 
 class DeviceInfo;
 
-class DeviceHandler : public QObject
+class DeviceConnector : public QObject
 {
     Q_OBJECT
 
@@ -25,10 +25,10 @@ public:
     };
     Q_ENUM(AddressType)
 
-    DeviceHandler(QObject *parent = nullptr);
-    ~DeviceHandler();
+    DeviceConnector(QObject *parent = nullptr, const QBluetoothDeviceInfo *device = nullptr);
+    ~DeviceConnector();
 
-    void connectDevice(QBluetoothDeviceInfo *device);
+    void connectDevice(const QBluetoothDeviceInfo *device);
     void setAddressType(AddressType type);
     AddressType addressType() const;
 
@@ -55,10 +55,11 @@ private:
     QLowEnergyController *m_control = nullptr;
     QLowEnergyService *m_service = nullptr;
     QLowEnergyDescriptor m_notificationDesc;
-    QBluetoothDeviceInfo *m_currentDevice = nullptr;
+    const QBluetoothDeviceInfo *m_currentDevice = nullptr;
     QLowEnergyController::RemoteAddressType m_addressType = QLowEnergyController::PublicAddress;
 
     bool m_foundOutput = false;
+    std::string prefix;
 };
 
 #endif

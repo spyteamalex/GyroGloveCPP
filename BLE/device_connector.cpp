@@ -1,77 +1,80 @@
-#include "devicehandler.h"
+#include "device_connector.h"
 #include <QtEndian>
 #include <QRandomGenerator>
-#include "global.h"
+#include "../global.h"
 
 
-DeviceHandler::DeviceHandler(QObject *parent) :
+DeviceConnector::DeviceConnector(QObject *parent, const QBluetoothDeviceInfo *device) :
         QObject(parent),
-        m_foundOutput(false) {}
+        m_foundOutput(false) {
+    connectDevice(device);
+}
 
-DeviceHandler::~DeviceHandler() {
+DeviceConnector::~DeviceConnector() {
     delete m_service;
     delete m_control;
 }
 
 
-void DeviceHandler::setAddressType(AddressType type) {
+void DeviceConnector::setAddressType(AddressType type) {
     switch (type) {
-        case DeviceHandler::AddressType::PublicAddress:
+        case DeviceConnector::AddressType::PublicAddress:
             m_addressType = QLowEnergyController::PublicAddress;
             break;
-        case DeviceHandler::AddressType::RandomAddress:
+        case DeviceConnector::AddressType::RandomAddress:
             m_addressType = QLowEnergyController::RandomAddress;
             break;
     }
 }
 
-DeviceHandler::AddressType DeviceHandler::addressType() const {
+DeviceConnector::AddressType DeviceConnector::addressType() const {
     if (m_addressType == QLowEnergyController::RandomAddress)
-        return DeviceHandler::AddressType::RandomAddress;
+        return DeviceConnector::AddressType::RandomAddress;
 
-    return DeviceHandler::AddressType::PublicAddress;
+    return DeviceConnector::AddressType::PublicAddress;
 }
 
-void DeviceHandler::connectDevice(QBluetoothDeviceInfo *device) {
+void DeviceConnector::connectDevice(const QBluetoothDeviceInfo *device) {
     m_currentDevice = device;
 
     if (m_control) {
         disconnectService();
     }
     if (m_currentDevice) {
+        prefix = device->name().toStdString();
         m_control = QLowEnergyController::createCentral(*m_currentDevice, this);
         m_control->setRemoteAddressType(m_addressType);
         connect(m_control, &QLowEnergyController::serviceDiscovered,
-                this, &DeviceHandler::serviceDiscovered);
+                this, &DeviceConnector::serviceDiscovered);
         connect(m_control, &QLowEnergyController::discoveryFinished,
-                this, &DeviceHandler::serviceScanDone);
+                this, &DeviceConnector::serviceScanDone);
 
         connect(m_control,
                 static_cast<void (QLowEnergyController::*)(QLowEnergyController::Error)>(&QLowEnergyController::error),
                 this, [this](QLowEnergyController::Error error) {
-                    errorln("Cannot connect to remote device.");
+                    errorln(prefix, "Cannot connect to remote device.");
                 });
         connect(m_control, &QLowEnergyController::connected, this, [this]() {
-            logln("Controller connected. Search services...");
+            logln(prefix, "Controller connected. Search services...");
             m_control->discoverServices();
         });
         connect(m_control, &QLowEnergyController::disconnected, this, [this]() {
-            errorln("Controller disconnected");
+            errorln(prefix, "Controller disconnected");
         });
 
         m_control->connectToDevice();
     }
 }
 
-void DeviceHandler::serviceDiscovered(const QBluetoothUuid &gatt) {
+void DeviceConnector::serviceDiscovered(const QBluetoothUuid &gatt) {
     if (gatt == QBluetoothUuid(SERVICE)) {
-        logln("Service discovered. Waiting for service scan to be done...");
+        logln(prefix, "Service discovered. Waiting for service scan to be done...");
         m_foundOutput = true;
     }
 }
 
-void DeviceHandler::serviceScanDone() {
-    logln("Service scan done.");
+void DeviceConnector::serviceScanDone() {
+    logln(prefix, "Service scan done.");
 
     if (m_service) {
         delete m_service;
@@ -82,25 +85,25 @@ void DeviceHandler::serviceScanDone() {
         m_service = m_control->createServiceObject(QBluetoothUuid(SERVICE), this);
 
     if (m_service) {
-        connect(m_service, &QLowEnergyService::stateChanged, this, &DeviceHandler::serviceStateChanged);
-        connect(m_service, &QLowEnergyService::characteristicChanged, this, &DeviceHandler::receiveData);
-        connect(m_service, &QLowEnergyService::descriptorWritten, this, &DeviceHandler::confirmedDescriptorWrite);
+        connect(m_service, &QLowEnergyService::stateChanged, this, &DeviceConnector::serviceStateChanged);
+        connect(m_service, &QLowEnergyService::characteristicChanged, this, &DeviceConnector::receiveData);
+        connect(m_service, &QLowEnergyService::descriptorWritten, this, &DeviceConnector::confirmedDescriptorWrite);
         m_service->discoverDetails();
     } else {
-        errorln("Service not found.");
+        errorln(prefix, "Service not found.");
     }
 }
 
-void DeviceHandler::serviceStateChanged(QLowEnergyService::ServiceState s) {
+void DeviceConnector::serviceStateChanged(QLowEnergyService::ServiceState s) {
     switch (s) {
         case QLowEnergyService::DiscoveringServices:
-            logln("Discovering services...");
+            logln(prefix, "Discovering services...");
             break;
         case QLowEnergyService::ServiceDiscovered: {
-            logln("Service discovered.");
+            logln(prefix, "Service discovered.");
             const QLowEnergyCharacteristic outChar = m_service->characteristic(QBluetoothUuid(CHARACTERISTIC));
             if (!outChar.isValid()) {
-                errorln("Data not found.");
+                errorln(prefix, "Data not found.");
                 break;
             }
 
@@ -116,13 +119,13 @@ void DeviceHandler::serviceStateChanged(QLowEnergyService::ServiceState s) {
 
 }
 
-void DeviceHandler::receiveData(const QLowEnergyCharacteristic &c, const QByteArray &value) {
+void DeviceConnector::receiveData(const QLowEnergyCharacteristic &c, const QByteArray &value) {
     if (c.uuid() != QBluetoothUuid(CHARACTERISTIC))
         return;
     emit dataReceived(value);
 }
 
-void DeviceHandler::confirmedDescriptorWrite(const QLowEnergyDescriptor &d, const QByteArray &value) {
+void DeviceConnector::confirmedDescriptorWrite(const QLowEnergyDescriptor &d, const QByteArray &value) {
     if (d.isValid() && d == m_notificationDesc && value == QByteArray::fromHex("0000")) {
         m_control->disconnectFromDevice();
         delete m_service;
@@ -130,7 +133,7 @@ void DeviceHandler::confirmedDescriptorWrite(const QLowEnergyDescriptor &d, cons
     }
 }
 
-void DeviceHandler::disconnectService() {
+void DeviceConnector::disconnectService() {
     m_foundOutput = false;
 
     if (m_notificationDesc.isValid() && m_service
@@ -148,7 +151,7 @@ void DeviceHandler::disconnectService() {
     }
 }
 
-bool DeviceHandler::alive() const {
+bool DeviceConnector::alive() const {
     if (m_service)
         return m_service->state() == QLowEnergyService::ServiceDiscovered;
 

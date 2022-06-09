@@ -65,17 +65,65 @@ build CMakeFiles/GloveMouseCPP.dir/main.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug
   OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
   OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir
 
-build CMakeFiles/GloveMouseCPP.dir/devicehandler.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/devicehandler.cpp || cmake_object_order_depends_target_GloveMouseCPP
+build CMakeFiles/GloveMouseCPP.dir/BLE/device_connector.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/BLE/device_connector.cpp || cmake_object_order_depends_target_GloveMouseCPP
   DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/devicehandler.cpp.o.d
+  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/BLE/device_connector.cpp.o.d
+  FLAGS = -g -fPIC
+  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
+  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir/BLE
+
+build CMakeFiles/GloveMouseCPP.dir/BLE/device_finder.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/BLE/device_finder.cpp || cmake_object_order_depends_target_GloveMouseCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
+  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/BLE/device_finder.cpp.o.d
+  FLAGS = -g -fPIC
+  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
+  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir/BLE
+
+build CMakeFiles/GloveMouseCPP.dir/mouse_mover.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/mouse_mover.cpp || cmake_object_order_depends_target_GloveMouseCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
+  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/mouse_mover.cpp.o.d
   FLAGS = -g -fPIC
   INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
   OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
   OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir
 
-build CMakeFiles/GloveMouseCPP.dir/devicefinder.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/devicefinder.cpp || cmake_object_order_depends_target_GloveMouseCPP
+build CMakeFiles/GloveMouseCPP.dir/device_handler.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/device_handler.cpp || cmake_object_order_depends_target_GloveMouseCPP
   DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/devicefinder.cpp.o.d
+  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/device_handler.cpp.o.d
+  FLAGS = -g -fPIC
+  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
+  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir
+
+build CMakeFiles/GloveMouseCPP.dir/decoder.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/decoder.cpp || cmake_object_order_depends_target_GloveMouseCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
+  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/decoder.cpp.o.d
+  FLAGS = -g -fPIC
+  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
+  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir
+
+build CMakeFiles/GloveMouseCPP.dir/quaternion.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/quaternion.cpp || cmake_object_order_depends_target_GloveMouseCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
+  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/quaternion.cpp.o.d
+  FLAGS = -g -fPIC
+  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
+  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir
+
+build CMakeFiles/GloveMouseCPP.dir/MouseAdapter.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/MouseAdapter.cpp || cmake_object_order_depends_target_GloveMouseCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
+  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/MouseAdapter.cpp.o.d
+  FLAGS = -g -fPIC
+  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
+  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir
+
+build CMakeFiles/GloveMouseCPP.dir/my_math.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/my_math.cpp || cmake_object_order_depends_target_GloveMouseCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
+  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/my_math.cpp.o.d
   FLAGS = -g -fPIC
   INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
   OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
@@ -89,7 +137,7 @@ build CMakeFiles/GloveMouseCPP.dir/devicefinder.cpp.o: CXX_COMPILER__GloveMouseC
 #############################################
 # Link the executable GloveMouseCPP
 
-build GloveMouseCPP: CXX_EXECUTABLE_LINKER__GloveMouseCPP_Debug CMakeFiles/GloveMouseCPP.dir/GloveMouseCPP_autogen/mocs_compilation.cpp.o CMakeFiles/GloveMouseCPP.dir/main.cpp.o CMakeFiles/GloveMouseCPP.dir/devicehandler.cpp.o CMakeFiles/GloveMouseCPP.dir/devicefinder.cpp.o | /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Bluetooth.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12 || GloveMouseCPP_autogen
+build GloveMouseCPP: CXX_EXECUTABLE_LINKER__GloveMouseCPP_Debug CMakeFiles/GloveMouseCPP.dir/GloveMouseCPP_autogen/mocs_compilation.cpp.o CMakeFiles/GloveMouseCPP.dir/main.cpp.o CMakeFiles/GloveMouseCPP.dir/BLE/device_connector.cpp.o CMakeFiles/GloveMouseCPP.dir/BLE/device_finder.cpp.o CMakeFiles/GloveMouseCPP.dir/mouse_mover.cpp.o CMakeFiles/GloveMouseCPP.dir/device_handler.cpp.o CMakeFiles/GloveMouseCPP.dir/decoder.cpp.o CMakeFiles/GloveMouseCPP.dir/quaternion.cpp.o CMakeFiles/GloveMouseCPP.dir/MouseAdapter.cpp.o CMakeFiles/GloveMouseCPP.dir/my_math.cpp.o | /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Bluetooth.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12 || GloveMouseCPP_autogen
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Bluetooth.so.5.12.12  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12
   OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir

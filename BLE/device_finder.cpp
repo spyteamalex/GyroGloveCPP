@@ -1,6 +1,8 @@
-#include "devicefinder.h"
-#include "devicehandler.h"
-#include "global.h"
+#include "device_finder.h"
+#include "device_connector.h"
+#include "../global.h"
+
+#define prefix "BLE scanner"
 
 DeviceFinder::DeviceFinder(QObject *parent) :
         QObject(parent) {
@@ -24,7 +26,7 @@ void DeviceFinder::startSearch() {
     m_devices.clear();
 
     m_deviceDiscoveryAgent->start(QBluetoothDeviceDiscoveryAgent::LowEnergyMethod);
-    logln("Scanning for devices...");
+    logln(prefix, "Scanning for devices...");
 
     emit devicesChanged();
     emit stateChanged(STATE::SEARCHING);
@@ -38,27 +40,27 @@ void DeviceFinder::addDevice(const QBluetoothDeviceInfo& device) {
     }
 }
 
-void DeviceFinder::scanError(QBluetoothDeviceDiscoveryAgent::Error error) {
+void DeviceFinder::scanError(const QBluetoothDeviceDiscoveryAgent::Error &error) {
     if (error == QBluetoothDeviceDiscoveryAgent::PoweredOffError)
-        errorln("The Bluetooth adaptor is powered off.");
+        errorln(prefix, "The Bluetooth adaptor is powered off.");
     else if (error == QBluetoothDeviceDiscoveryAgent::InputOutputError)
-        errorln("Writing or reading from the device resulted in an error.");
+        errorln(prefix, "Writing or reading from the device resulted in an error.");
     else
-        errorln("An unknown error has occurred.");
+        errorln(prefix, "An unknown error has occurred.");
     emit stateChanged(STATE::ERROR);
 }
 
 void DeviceFinder::scanFinished() {
     if (m_devices.isEmpty())
-        errorln("No Low Energy devices found.");
+        errorln(prefix, "No Low Energy devices found.");
     else {
-        logln("Scanning done.");
+        logln(prefix, "Scanning done.");
     }
     emit stateChanged(STATE::FINISHED);
 }
 
-QVariant DeviceFinder::devices() {
-    return QVariant::fromValue(m_devices);
+const QList<QBluetoothDeviceInfo>& DeviceFinder::devices() {
+    return m_devices;
 }
 
 DeviceFinder::STATE DeviceFinder::state() {

@@ -14,8 +14,7 @@ find_package(Qt5 COMPONENTS
         COMPONENTS Bluetooth)
 
 #target_link_libraries(mytarget PRIVATE Qt5::Bluetooth)
-
-SET(SOURCES devicehandler.cpp devicehandler.h devicefinder.cpp devicefinder.h global.h)
+SET(SOURCES BLE/device_connector.cpp BLE/device_connector.h BLE/device_finder.cpp BLE/device_finder.h global.h mouse_mover.cpp mouse_mover.h device_handler.cpp device_handler.h decoder.cpp decoder.h quaternion.cpp quaternion.h MouseAdapter.cpp MouseAdapter.h my_math.cpp my_math.h)
 
 add_executable(GloveMouseCPP main.cpp ${SOURCES})
 target_link_libraries(GloveMouseCPP
