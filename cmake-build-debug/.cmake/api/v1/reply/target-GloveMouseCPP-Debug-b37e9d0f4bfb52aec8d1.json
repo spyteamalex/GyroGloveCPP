@@ -278,12 +278,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "MouseAdapter.cpp",
+			"path" : "mouse_adapter.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "MouseAdapter.h",
+			"path" : "mouse_adapter.h",
 			"sourceGroupIndex" : 1
 		},
 		{

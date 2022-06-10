@@ -8,6 +8,7 @@
 #include "BLE/device_connector.h"
 #include "global.h"
 #include "decoder.h"
+#include "mouse_adapter.h"
 #include <chrono>
 
 class DeviceHandler : public QObject
@@ -17,17 +18,16 @@ Q_OBJECT
 
 public:
     DeviceHandler(const QBluetoothDeviceInfo&, QObject * = nullptr);
+    ~DeviceHandler();
 
 private slots:
     void handle(const QByteArray &value);
 
 private:
+    MouseAdapter *ma = nullptr;
     DeviceConnector connector;
     const QBluetoothDeviceInfo &device;
     QByteArray data;
-    std::chrono::time_point<std::chrono::system_clock> last_ev;
-
-    long long updateTimer();
 };
 
 

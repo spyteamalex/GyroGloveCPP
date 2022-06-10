@@ -61,12 +61,6 @@
 			null
 		],
 		[
-			"/home/spyteamalex/Projects/GloveMouseCPP/MouseAdapter.h",
-			"MU",
-			"EWIEGA46WW/moc_MouseAdapter.cpp",
-			null
-		],
-		[
 			"/home/spyteamalex/Projects/GloveMouseCPP/decoder.h",
 			"MU",
 			"EWIEGA46WW/moc_decoder.cpp",
@@ -82,6 +76,12 @@
 			"/home/spyteamalex/Projects/GloveMouseCPP/global.h",
 			"MU",
 			"EWIEGA46WW/moc_global.cpp",
+			null
+		],
+		[
+			"/home/spyteamalex/Projects/GloveMouseCPP/mouse_adapter.h",
+			"MU",
+			"EWIEGA46WW/moc_mouse_adapter.cpp",
 			null
 		],
 		[
@@ -162,11 +162,6 @@
 			"MU",
 			null
 		],
-		[
-			"/home/spyteamalex/Projects/GloveMouseCPP/MouseAdapter.cpp",
-			"MU",
-			null
-		],
 		[ "/home/spyteamalex/Projects/GloveMouseCPP/decoder.cpp", "MU", null ],
 		[
 			"/home/spyteamalex/Projects/GloveMouseCPP/device_handler.cpp",
@@ -174,6 +169,11 @@
 			null
 		],
 		[ "/home/spyteamalex/Projects/GloveMouseCPP/main.cpp", "MU", null ],
+		[
+			"/home/spyteamalex/Projects/GloveMouseCPP/mouse_adapter.cpp",
+			"MU",
+			null
+		],
 		[
 			"/home/spyteamalex/Projects/GloveMouseCPP/mouse_mover.cpp",
 			"MU",

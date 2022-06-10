@@ -4,7 +4,7 @@
 
 #define prefix "mouse mover"
 
-void emit(uint16_t fd, uint16_t type, uint16_t code, uint16_t value) {
+void emit(int fd, int type, int code, int value) {
     struct input_event ev;
     memset(&ev, 0, sizeof(struct input_event));
     ev.type = type;
@@ -47,9 +47,6 @@ Mouse::Mouse() {
 
     if(ioctl(fd, UI_DEV_CREATE) < 0)
         errorln(prefix, "error: ioctl UI_DEV_CREATE");
-
-    //todo remove
-    sleep(1);
 }
 
 Mouse::~Mouse(){

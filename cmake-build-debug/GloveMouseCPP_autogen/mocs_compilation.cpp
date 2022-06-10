@@ -2,3 +2,4 @@
 #include "F7GOV5YVTJ/moc_device_connector.cpp"
 #include "F7GOV5YVTJ/moc_device_finder.cpp"
 #include "EWIEGA46WW/moc_device_handler.cpp"
+#include "EWIEGA46WW/moc_mouse_adapter.cpp"

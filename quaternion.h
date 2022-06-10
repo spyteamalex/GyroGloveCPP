@@ -4,26 +4,34 @@
 
 #ifndef GLOVEMOUSECPP_QUATERNION_H
 #define GLOVEMOUSECPP_QUATERNION_H
+#include <cmath>
+#include "global.h"
 
 
 class Quaternion {
 
 
 private:
-    float _w,_x,_y,_z;
+    double _w,_x,_y,_z;
+
+    static void threeAxisRot(double r11, double r12, double r21, double r31, double r32, double *res);
+
+    static void twoAxisRot(double r11, double r12, double r21, double r31, double r32, double *res);
 public:
-    float w() const;
+    double w() const;
 
-    float x() const;
+    double x() const;
 
-    float y() const;
+    double y() const;
 
-    float z() const;
-
-public:
-    Quaternion(float w, float x, float y, float z);
+    double z() const;
 
 
+    enum RotSeq{zyx, zyz, zxy, zxz, yxz, yxy, yzx, yzy, xyz, xyx, xzy,xzx};
+
+    Quaternion(double w, double x, double y, double z);
+
+    void quaternion2Euler(double *res, RotSeq rotSeq) const;
 };
 
 
