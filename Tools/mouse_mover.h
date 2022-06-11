@@ -7,12 +7,12 @@
 
 #include <linux/uinput.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <unistd.h>
 #include <fcntl.h>
-#include <errno.h>
+#include <cerrno>
 #include <linux/input.h>
 #include <linux/uinput.h>
 
@@ -23,13 +23,20 @@
 
 class Mouse{
 public:
+    static const int LEFT = BTN_LEFT;
+    static const int RIGHT = BTN_RIGHT;
+    static const int MIDDLE = BTN_MIDDLE;
+
     Mouse();
     ~Mouse();
     void move(int dx, int dy);
+    void key(int key, bool state);
+    void scroll(int dx, int dy);
 
 private:
     int fd;
     struct uinput_user_dev uidev;
+
 };
 
 

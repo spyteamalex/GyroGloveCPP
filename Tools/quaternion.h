@@ -5,7 +5,7 @@
 #ifndef GLOVEMOUSECPP_QUATERNION_H
 #define GLOVEMOUSECPP_QUATERNION_H
 #include <cmath>
-#include "global.h"
+#include "../global.h"
 
 
 class Quaternion {
@@ -18,13 +18,13 @@ private:
 
     static void twoAxisRot(double r11, double r12, double r21, double r31, double r32, double *res);
 public:
-    double w() const;
+    [[nodiscard]] double w() const;
 
-    double x() const;
+    [[nodiscard]] double x() const;
 
-    double y() const;
+    [[nodiscard]] double y() const;
 
-    double z() const;
+    [[nodiscard]] double z() const;
 
 
     enum RotSeq{zyx, zyz, zxy, zxz, yxz, yxy, yzx, yzy, xyz, xyx, xzy,xzx};

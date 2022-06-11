@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_DeviceFinder_t {
-    QByteArrayData data[16];
-    char stringdata0[189];
+    QByteArrayData data[17];
+    char stringdata0[209];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,26 +34,27 @@ static const qt_meta_stringdata_DeviceFinder_t qt_meta_stringdata_DeviceFinder =
 QT_MOC_LITERAL(0, 0, 12), // "DeviceFinder"
 QT_MOC_LITERAL(1, 13, 12), // "stateChanged"
 QT_MOC_LITERAL(2, 26, 0), // ""
-QT_MOC_LITERAL(3, 27, 5), // "STATE"
-QT_MOC_LITERAL(4, 33, 14), // "devicesChanged"
-QT_MOC_LITERAL(5, 48, 11), // "startSearch"
-QT_MOC_LITERAL(6, 60, 9), // "addDevice"
-QT_MOC_LITERAL(7, 70, 20), // "QBluetoothDeviceInfo"
-QT_MOC_LITERAL(8, 91, 9), // "scanError"
-QT_MOC_LITERAL(9, 101, 37), // "QBluetoothDeviceDiscoveryAgen..."
-QT_MOC_LITERAL(10, 139, 5), // "error"
-QT_MOC_LITERAL(11, 145, 12), // "scanFinished"
-QT_MOC_LITERAL(12, 158, 5), // "state"
-QT_MOC_LITERAL(13, 164, 8), // "FINISHED"
-QT_MOC_LITERAL(14, 173, 5), // "ERROR"
-QT_MOC_LITERAL(15, 179, 9) // "SEARCHING"
+QT_MOC_LITERAL(3, 27, 19), // "DeviceFinder::STATE"
+QT_MOC_LITERAL(4, 47, 14), // "devicesChanged"
+QT_MOC_LITERAL(5, 62, 11), // "startSearch"
+QT_MOC_LITERAL(6, 74, 9), // "addDevice"
+QT_MOC_LITERAL(7, 84, 20), // "QBluetoothDeviceInfo"
+QT_MOC_LITERAL(8, 105, 9), // "scanError"
+QT_MOC_LITERAL(9, 115, 37), // "QBluetoothDeviceDiscoveryAgen..."
+QT_MOC_LITERAL(10, 153, 5), // "error"
+QT_MOC_LITERAL(11, 159, 12), // "scanFinished"
+QT_MOC_LITERAL(12, 172, 5), // "state"
+QT_MOC_LITERAL(13, 178, 5), // "STATE"
+QT_MOC_LITERAL(14, 184, 8), // "FINISHED"
+QT_MOC_LITERAL(15, 193, 5), // "ERROR"
+QT_MOC_LITERAL(16, 199, 9) // "SEARCHING"
 
     },
-    "DeviceFinder\0stateChanged\0\0STATE\0"
-    "devicesChanged\0startSearch\0addDevice\0"
-    "QBluetoothDeviceInfo\0scanError\0"
-    "QBluetoothDeviceDiscoveryAgent::Error\0"
-    "error\0scanFinished\0state\0FINISHED\0"
+    "DeviceFinder\0stateChanged\0\0"
+    "DeviceFinder::STATE\0devicesChanged\0"
+    "startSearch\0addDevice\0QBluetoothDeviceInfo\0"
+    "scanError\0QBluetoothDeviceDiscoveryAgent::Error\0"
+    "error\0scanFinished\0state\0STATE\0FINISHED\0"
     "ERROR\0SEARCHING"
 };
 #undef QT_MOC_LITERAL
@@ -92,18 +93,18 @@ static const uint qt_meta_data_DeviceFinder[] = {
     QMetaType::Void,
 
  // properties: name, type, flags
-      12, 0x80000000 | 3, 0x00495009,
+      12, 0x80000000 | 13, 0x00495009,
 
  // properties: notify_signal_id
        0,
 
  // enums: name, alias, flags, count, data
-       3,    3, 0x2,    3,   65,
+      13,   13, 0x2,    3,   65,
 
  // enum data: key, value
-      13, uint(DeviceFinder::STATE::FINISHED),
-      14, uint(DeviceFinder::STATE::ERROR),
-      15, uint(DeviceFinder::STATE::SEARCHING),
+      14, uint(DeviceFinder::STATE::FINISHED),
+      15, uint(DeviceFinder::STATE::ERROR),
+      16, uint(DeviceFinder::STATE::SEARCHING),
 
        0        // eod
 };
@@ -114,7 +115,7 @@ void DeviceFinder::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         auto *_t = static_cast<DeviceFinder *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->stateChanged((*reinterpret_cast< STATE(*)>(_a[1]))); break;
+        case 0: _t->stateChanged((*reinterpret_cast< DeviceFinder::STATE(*)>(_a[1]))); break;
         case 1: _t->devicesChanged(); break;
         case 2: _t->startSearch(); break;
         case 3: _t->addDevice((*reinterpret_cast< const QBluetoothDeviceInfo(*)>(_a[1]))); break;
@@ -136,7 +137,7 @@ void DeviceFinder::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (DeviceFinder::*)(STATE );
+            using _t = void (DeviceFinder::*)(DeviceFinder::STATE );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&DeviceFinder::stateChanged)) {
                 *result = 0;
                 return;
@@ -223,7 +224,7 @@ int DeviceFinder::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void DeviceFinder::stateChanged(STATE _t1)
+void DeviceFinder::stateChanged(DeviceFinder::STATE _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

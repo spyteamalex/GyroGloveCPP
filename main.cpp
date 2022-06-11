@@ -4,10 +4,7 @@
 #include "BLE/device_finder.h"
 #include "BLE/device_connector.h"
 #include "global.h"
-#include "mouse_mover.h"
-#include "device_handler.h"
-
-#include <chrono>
+#include "Handlers/device_handler.h"
 
 int main(int argc, char *argv[])
 {

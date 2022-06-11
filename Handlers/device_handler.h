@@ -5,10 +5,10 @@
 #include <QTimer>
 #include <QVector>
 #include <QBluetoothDeviceInfo>
-#include "BLE/device_connector.h"
-#include "global.h"
-#include "decoder.h"
-#include "mouse_adapter.h"
+#include "../BLE/device_connector.h"
+#include "../global.h"
+#include "../Tools/decoder.h"
+#include "Adapters/mouse_adapter.h"
 #include <chrono>
 
 class DeviceHandler : public QObject
@@ -17,17 +17,17 @@ class DeviceHandler : public QObject
 Q_OBJECT
 
 public:
-    DeviceHandler(const QBluetoothDeviceInfo&, QObject * = nullptr);
-    ~DeviceHandler();
+    explicit DeviceHandler(const QBluetoothDeviceInfo&, QObject * = nullptr);
+    ~DeviceHandler() override;
 
 private slots:
     void handle(const QByteArray &value);
 
 private:
-    MouseAdapter *ma = nullptr;
     DeviceConnector connector;
     const QBluetoothDeviceInfo &device;
     QByteArray data;
+    Adapter *adapter;
 };
 
 

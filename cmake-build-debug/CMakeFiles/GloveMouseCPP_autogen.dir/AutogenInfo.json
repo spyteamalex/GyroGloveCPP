@@ -61,45 +61,51 @@
 			null
 		],
 		[
-			"/home/spyteamalex/Projects/GloveMouseCPP/decoder.h",
+			"/home/spyteamalex/Projects/GloveMouseCPP/Handlers/Adapters/adapter.h",
 			"MU",
-			"EWIEGA46WW/moc_decoder.cpp",
+			"WI4ZDFX3PR/moc_adapter.cpp",
 			null
 		],
 		[
-			"/home/spyteamalex/Projects/GloveMouseCPP/device_handler.h",
+			"/home/spyteamalex/Projects/GloveMouseCPP/Handlers/Adapters/mouse_adapter.h",
 			"MU",
-			"EWIEGA46WW/moc_device_handler.cpp",
+			"WI4ZDFX3PR/moc_mouse_adapter.cpp",
+			null
+		],
+		[
+			"/home/spyteamalex/Projects/GloveMouseCPP/Handlers/device_handler.h",
+			"MU",
+			"TTTNHWGBC5/moc_device_handler.cpp",
+			null
+		],
+		[
+			"/home/spyteamalex/Projects/GloveMouseCPP/Tools/decoder.h",
+			"MU",
+			"WKHKOO7AB7/moc_decoder.cpp",
+			null
+		],
+		[
+			"/home/spyteamalex/Projects/GloveMouseCPP/Tools/mouse_mover.h",
+			"MU",
+			"WKHKOO7AB7/moc_mouse_mover.cpp",
+			null
+		],
+		[
+			"/home/spyteamalex/Projects/GloveMouseCPP/Tools/my_math.h",
+			"MU",
+			"WKHKOO7AB7/moc_my_math.cpp",
+			null
+		],
+		[
+			"/home/spyteamalex/Projects/GloveMouseCPP/Tools/quaternion.h",
+			"MU",
+			"WKHKOO7AB7/moc_quaternion.cpp",
 			null
 		],
 		[
 			"/home/spyteamalex/Projects/GloveMouseCPP/global.h",
 			"MU",
 			"EWIEGA46WW/moc_global.cpp",
-			null
-		],
-		[
-			"/home/spyteamalex/Projects/GloveMouseCPP/mouse_adapter.h",
-			"MU",
-			"EWIEGA46WW/moc_mouse_adapter.cpp",
-			null
-		],
-		[
-			"/home/spyteamalex/Projects/GloveMouseCPP/mouse_mover.h",
-			"MU",
-			"EWIEGA46WW/moc_mouse_mover.cpp",
-			null
-		],
-		[
-			"/home/spyteamalex/Projects/GloveMouseCPP/my_math.h",
-			"MU",
-			"EWIEGA46WW/moc_my_math.cpp",
-			null
-		],
-		[
-			"/home/spyteamalex/Projects/GloveMouseCPP/quaternion.h",
-			"MU",
-			"EWIEGA46WW/moc_quaternion.cpp",
 			null
 		]
 	],
@@ -162,25 +168,37 @@
 			"MU",
 			null
 		],
-		[ "/home/spyteamalex/Projects/GloveMouseCPP/decoder.cpp", "MU", null ],
 		[
-			"/home/spyteamalex/Projects/GloveMouseCPP/device_handler.cpp",
-			"MU",
-			null
-		],
-		[ "/home/spyteamalex/Projects/GloveMouseCPP/main.cpp", "MU", null ],
-		[
-			"/home/spyteamalex/Projects/GloveMouseCPP/mouse_adapter.cpp",
+			"/home/spyteamalex/Projects/GloveMouseCPP/Handlers/Adapters/mouse_adapter.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/spyteamalex/Projects/GloveMouseCPP/mouse_mover.cpp",
+			"/home/spyteamalex/Projects/GloveMouseCPP/Handlers/device_handler.cpp",
 			"MU",
 			null
 		],
-		[ "/home/spyteamalex/Projects/GloveMouseCPP/my_math.cpp", "MU", null ],
-		[ "/home/spyteamalex/Projects/GloveMouseCPP/quaternion.cpp", "MU", null ]
+		[
+			"/home/spyteamalex/Projects/GloveMouseCPP/Tools/decoder.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/spyteamalex/Projects/GloveMouseCPP/Tools/mouse_mover.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/spyteamalex/Projects/GloveMouseCPP/Tools/my_math.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/spyteamalex/Projects/GloveMouseCPP/Tools/quaternion.cpp",
+			"MU",
+			null
+		],
+		[ "/home/spyteamalex/Projects/GloveMouseCPP/main.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

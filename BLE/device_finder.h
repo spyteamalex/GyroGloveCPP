@@ -36,7 +36,7 @@ private slots:
     void scanFinished();
 
 signals:
-    void stateChanged(STATE);
+    void stateChanged(DeviceFinder::STATE);
     void devicesChanged();
 
 private:

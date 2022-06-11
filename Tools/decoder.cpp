@@ -2,10 +2,9 @@
 // Created by spyteamalex on 09.06.22.
 //
 
-#include <QPair>
 #include "decoder.h"
 
-int32_t ba2i32(QByteArray::const_iterator begin){
+int32_t Decoder::ba2i32(QByteArray::const_iterator begin){
     int32_t a;
     for(int i = 0; i < 4; i++)
         ((uint8_t*)&a)[i] = *(begin+i);

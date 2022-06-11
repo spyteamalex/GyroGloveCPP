@@ -5,20 +5,20 @@
 #ifndef GLOVEMOUSECPP_MOUSE_ADAPTER_H
 #define GLOVEMOUSECPP_MOUSE_ADAPTER_H
 
-#include "my_math.h"
-#include "mouse_mover.h"
-#include "quaternion.h"
-#include "global.h"
+#include "../../Tools/my_math.h"
+#include "../../Tools/mouse_mover.h"
+#include "../../Tools/quaternion.h"
+#include "../../Tools/decoder.h"
+#include "../../global.h"
+#include "adapter.h"
 #include <cmath>
 #include <QTimer>
-
-#define prefix "MouseAdapter"
 
 /**
  * https://askdev.ru/q/suschestvuet-li-algoritm-preobrazovaniya-kvaternionnyh-vrascheniy-v-uglovye-vrascheniya-eylera-112001/
 */
 
-class MouseAdapter: public QObject {
+class MouseAdapter: public QObject, public Adapter{
     Q_OBJECT
 private:
     QTimer timer;
@@ -38,10 +38,13 @@ private:
     static constexpr double xMax_s = PI / 2;
     static constexpr double xMin_s = 0.02;
 
+    bool scrolling = false;
     double xDebt_m = 0, yDebt_m = 0;
     double xDebt_s = 0, yDebt_s = 0;
     int getXSpeed(double v);
     int getYSpeed(double v);
+    int getXScroll(double v);
+    int getYScroll(double v);
 
     Mouse m;
     double lastX = 0, lastY = 0;
@@ -50,9 +53,16 @@ private slots:
     void loop();
 public:
     MouseAdapter();
+
+    ~MouseAdapter();
+
     void setSpeedByQuaternion(const Quaternion &q);
 
     void setSpeed(double x, double y);
+
+    void moveEvent(const Quaternion &quaternion) override;
+
+    void clickEvent(int event, int count, int button) override;
 };
 
 

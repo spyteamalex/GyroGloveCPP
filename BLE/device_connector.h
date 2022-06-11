@@ -8,8 +8,6 @@
 #include <QLowEnergyController>
 #include <QLowEnergyService>
 
-class DeviceInfo;
-
 class DeviceConnector : public QObject
 {
     Q_OBJECT

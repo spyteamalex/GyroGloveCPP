@@ -8,8 +8,10 @@
 
 #include <QByteArray>
 #include "quaternion.h"
+#include <QPair>
 
-struct Decoder {
+class Decoder {
+public:
     static const uint8_t NONE = 0;
     static const uint8_t CLICK = 1;
     static const uint8_t PRESS = 2;
@@ -22,6 +24,9 @@ struct Decoder {
     static Quaternion decodeQuaternion(const QByteArray::const_iterator &begin);
 
     static QPair<int, int> decodeClickDetails(const QByteArray::const_iterator &begin);
+
+private:
+    static int32_t ba2i32(const char *begin);
 };
 
 

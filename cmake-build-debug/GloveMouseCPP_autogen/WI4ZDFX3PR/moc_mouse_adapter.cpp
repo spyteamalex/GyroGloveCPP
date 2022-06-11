@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'DeviceHandler.h'
+** Meta object code from reading C++ file 'mouse_adapter.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.12.12)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../DeviceHandler.h"
+#include "../../../Handlers/Adapters/mouse_adapter.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'DeviceHandler.h' doesn't include <QObject>."
+#error "The header file 'mouse_adapter.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.12.12. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -20,28 +20,27 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_DeviceHandler_t {
-    QByteArrayData data[4];
-    char stringdata0[28];
+struct qt_meta_stringdata_MouseAdapter_t {
+    QByteArrayData data[3];
+    char stringdata0[19];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_DeviceHandler_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_MouseAdapter_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_DeviceHandler_t qt_meta_stringdata_DeviceHandler = {
+static const qt_meta_stringdata_MouseAdapter_t qt_meta_stringdata_MouseAdapter = {
     {
-QT_MOC_LITERAL(0, 0, 13), // "DeviceHandler"
-QT_MOC_LITERAL(1, 14, 6), // "handle"
-QT_MOC_LITERAL(2, 21, 0), // ""
-QT_MOC_LITERAL(3, 22, 5) // "value"
+QT_MOC_LITERAL(0, 0, 12), // "MouseAdapter"
+QT_MOC_LITERAL(1, 13, 4), // "loop"
+QT_MOC_LITERAL(2, 18, 0) // ""
 
     },
-    "DeviceHandler\0handle\0\0value"
+    "MouseAdapter\0loop\0"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_DeviceHandler[] = {
+static const uint qt_meta_data_MouseAdapter[] = {
 
  // content:
        8,       // revision
@@ -55,50 +54,53 @@ static const uint qt_meta_data_DeviceHandler[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   19,    2, 0x08 /* Private */,
+       1,    0,   19,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QByteArray,    3,
+    QMetaType::Void,
 
        0        // eod
 };
 
-void DeviceHandler::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void MouseAdapter::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<DeviceHandler *>(_o);
+        auto *_t = static_cast<MouseAdapter *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->handle((*reinterpret_cast< const QByteArray(*)>(_a[1]))); break;
+        case 0: _t->loop(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject DeviceHandler::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject MouseAdapter::staticMetaObject = { {
     &QObject::staticMetaObject,
-    qt_meta_stringdata_DeviceHandler.data,
-    qt_meta_data_DeviceHandler,
+    qt_meta_stringdata_MouseAdapter.data,
+    qt_meta_data_MouseAdapter,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *DeviceHandler::metaObject() const
+const QMetaObject *MouseAdapter::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *DeviceHandler::qt_metacast(const char *_clname)
+void *MouseAdapter::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_DeviceHandler.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_MouseAdapter.stringdata0))
         return static_cast<void*>(this);
+    if (!strcmp(_clname, "Adapter"))
+        return static_cast< Adapter*>(this);
     return QObject::qt_metacast(_clname);
 }
 
-int DeviceHandler::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int MouseAdapter::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
     if (_id < 0)
