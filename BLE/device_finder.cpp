@@ -6,27 +6,27 @@
 
 DeviceFinder::DeviceFinder(QObject *parent) :
         QObject(parent) {
-    m_deviceDiscoveryAgent = new QBluetoothDeviceDiscoveryAgent(this);
-    m_deviceDiscoveryAgent->setLowEnergyDiscoveryTimeout(5000);
+    deviceDiscoveryAgent = new QBluetoothDeviceDiscoveryAgent(this);
+    deviceDiscoveryAgent->setLowEnergyDiscoveryTimeout(5000);
 
-    connect(m_deviceDiscoveryAgent, &QBluetoothDeviceDiscoveryAgent::deviceDiscovered, this, &DeviceFinder::addDevice);
-    connect(m_deviceDiscoveryAgent, static_cast<void (QBluetoothDeviceDiscoveryAgent::*)(
+    connect(deviceDiscoveryAgent, &QBluetoothDeviceDiscoveryAgent::deviceDiscovered, this, &DeviceFinder::addDevice);
+    connect(deviceDiscoveryAgent, static_cast<void (QBluetoothDeviceDiscoveryAgent::*)(
                     QBluetoothDeviceDiscoveryAgent::Error)>(&QBluetoothDeviceDiscoveryAgent::error),
             this, &DeviceFinder::scanError);
 
-    connect(m_deviceDiscoveryAgent, &QBluetoothDeviceDiscoveryAgent::finished, this, &DeviceFinder::scanFinished);
-    connect(m_deviceDiscoveryAgent, &QBluetoothDeviceDiscoveryAgent::canceled, this, &DeviceFinder::scanFinished);
+    connect(deviceDiscoveryAgent, &QBluetoothDeviceDiscoveryAgent::finished, this, &DeviceFinder::scanFinished);
+    connect(deviceDiscoveryAgent, &QBluetoothDeviceDiscoveryAgent::canceled, this, &DeviceFinder::scanFinished);
 }
 
 DeviceFinder::~DeviceFinder() {
-    delete m_deviceDiscoveryAgent;
+    delete deviceDiscoveryAgent;
 }
 
 void DeviceFinder::startSearch() {
-    m_devices.clear();
+    devices.clear();
 
-    m_deviceDiscoveryAgent->start(QBluetoothDeviceDiscoveryAgent::LowEnergyMethod);
-    logln(prefix, "Scanning for devices...");
+    deviceDiscoveryAgent->start(QBluetoothDeviceDiscoveryAgent::LowEnergyMethod);
+    logln(prefix, "Scanning for getDevices...");
 
     emit devicesChanged();
     emit stateChanged(STATE::SEARCHING);
@@ -34,7 +34,7 @@ void DeviceFinder::startSearch() {
 
 void DeviceFinder::addDevice(const QBluetoothDeviceInfo& device) {
     if (device.coreConfigurations() & QBluetoothDeviceInfo::LowEnergyCoreConfiguration) {
-        m_devices.append(device);
+        devices.append(device);
 //        logln("Low Energy device found. Scanning more...");
         emit devicesChanged();
     }
@@ -51,18 +51,18 @@ void DeviceFinder::scanError(const QBluetoothDeviceDiscoveryAgent::Error &error)
 }
 
 void DeviceFinder::scanFinished() {
-    if (m_devices.isEmpty())
-        errorln(prefix, "No Low Energy devices found.");
+    if (devices.isEmpty())
+        errorln(prefix, "No Low Energy getDevices found.");
     else {
         logln(prefix, "Scanning done.");
     }
     emit stateChanged(STATE::FINISHED);
 }
 
-const QList<QBluetoothDeviceInfo>& DeviceFinder::devices() {
-    return m_devices;
+const QList<QBluetoothDeviceInfo>& DeviceFinder::getDevices() {
+    return devices;
 }
 
-DeviceFinder::STATE DeviceFinder::state() {
-    return m_state;
+DeviceFinder::STATE DeviceFinder::getState() {
+    return state;
 }

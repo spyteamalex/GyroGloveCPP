@@ -23,19 +23,17 @@ int MouseAdapter::getYSpeed(double v) {
 }
 
 int MouseAdapter::getXScroll(double v) {
-    double spd = v * xa_s;
+    double spd = sign(v) * xa_s * std::pow(std::abs(v), xb_s);
     xDebt_s += spd;
     int mv = (int)xDebt_s;
-//    mv = edges(mv, -1, 1)
     xDebt_s -= mv;
     return mv;
 }
 
 int MouseAdapter::getYScroll(double v) {
-    double spd = v * ya_s;
+    double spd = sign(v) * ya_s * std::pow(std::abs(v), yb_s);
     yDebt_s += spd;
     int mv = (int)yDebt_s;
-//    mv = edges(mv, -1, 1)
     yDebt_s -= mv;
     return mv;
 }
@@ -45,8 +43,8 @@ void MouseAdapter::setSpeedByQuaternion(const Quaternion &q) {
     q.quaternion2Euler(res, Quaternion::RotSeq::zxy);
     double x = res[0];
     double y = res[1];
-    lastX = edges(x, -xMax_m, xMax_m, -xMin_m, xMin_m);
-    lastY = edges(y, -yMax_m, yMax_m, -yMin_m, yMin_m);
+    lastX = x;
+    lastY = y;
 }
 
 void MouseAdapter::setSpeed(double x, double y){
@@ -62,7 +60,7 @@ void MouseAdapter::loop() {
     }
 }
 
-MouseAdapter::MouseAdapter() {
+MouseAdapter::MouseAdapter(const Mouse& m) : m(m) {
     connect(&timer, &QTimer::timeout, this, &MouseAdapter::loop);
     timer.setInterval(10);
     timer.start();
@@ -73,8 +71,8 @@ MouseAdapter::~MouseAdapter() = default;
 void MouseAdapter::moveEvent(const Quaternion &q) {
     setSpeedByQuaternion(q);
 //    logln(prefix,
-//            "move " + tos(q.w()) + " " + tos(q.x()) + " " + tos(q.y()) + " " +
-//            tos(q.z()));
+//            "move " + tos(q.getWidth()) + " " + tos(q.getX()) + " " + tos(q.getY()) + " " +
+//            tos(q.getZ()));
 }
 
 #define __ 0)||(true
@@ -92,22 +90,22 @@ void MouseAdapter::clickEvent(int event, int count, int button) {
         scrolling = false;
     }
     CASE(Decoder::PRESS, 3, 3){
-        m.key(Mouse::LEFT, true);
+        m.setKey(Mouse::LEFT, true);
     }
     CASE(Decoder::RELEASE, 3, 3){
-        m.key(Mouse::LEFT, false);
+        m.setKey(Mouse::LEFT, false);
     }
     CASE(Decoder::CLICK, 1, 3){
-        m.key(Mouse::LEFT, true);
-        m.key(Mouse::LEFT, false);
+        m.setKey(Mouse::LEFT, true);
+        m.setKey(Mouse::LEFT, false);
     }
     CASE(Decoder::CLICK, 2, 3){
-        m.key(Mouse::RIGHT, true);
-        m.key(Mouse::RIGHT, false);
+        m.setKey(Mouse::RIGHT, true);
+        m.setKey(Mouse::RIGHT, false);
     }
     CASE(Decoder::CLICK, 3, 3){
-        m.key(Mouse::MIDDLE, true);
-        m.key(Mouse::MIDDLE, false);
+        m.setKey(Mouse::MIDDLE, true);
+        m.setKey(Mouse::MIDDLE, false);
     }
     logln(prefix, "click " + tos(event) + " " + tos(count) + " " + tos(button));
 }

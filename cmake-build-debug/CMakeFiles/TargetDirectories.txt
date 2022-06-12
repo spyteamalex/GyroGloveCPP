@@ -1,4 +1,4 @@
-/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/CMakeFiles/GloveMouseCPP.dir
-/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/CMakeFiles/GloveMouseCPP_autogen.dir
+/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/CMakeFiles/GyroGloveCPP.dir
+/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/CMakeFiles/GyroGloveCPP_autogen.dir

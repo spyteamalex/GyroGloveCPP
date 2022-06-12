@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: GloveMouseCPP
+# Project: GyroGloveCPP
 # Configurations: Debug
 # =============================================================================
 
@@ -39,119 +39,135 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/
+cmake_ninja_workdir = /home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target GloveMouseCPP
+# Object build statements for EXECUTABLE target GyroGloveCPP
 
 
 #############################################
-# Order-only phony target for GloveMouseCPP
+# Order-only phony target for GyroGloveCPP
 
-build cmake_object_order_depends_target_GloveMouseCPP: phony || GloveMouseCPP_autogen
+build cmake_object_order_depends_target_GyroGloveCPP: phony || GyroGloveCPP_autogen
 
-build CMakeFiles/GloveMouseCPP.dir/GloveMouseCPP_autogen/mocs_compilation.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_GloveMouseCPP
-  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/GloveMouseCPP_autogen/mocs_compilation.cpp.o.d
+build CMakeFiles/GyroGloveCPP.dir/GyroGloveCPP_autogen/mocs_compilation.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/GyroGloveCPP_autogen/mocs_compilation.cpp.o.d
   FLAGS = -g -fPIC
-  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
-  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
-  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir/GloveMouseCPP_autogen
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir/GyroGloveCPP_autogen
 
-build CMakeFiles/GloveMouseCPP.dir/main.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/main.cpp || cmake_object_order_depends_target_GloveMouseCPP
-  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/main.cpp.o.d
+build CMakeFiles/GyroGloveCPP.dir/main.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/main.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/main.cpp.o.d
   FLAGS = -g -fPIC
-  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
-  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
-  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir
 
-build CMakeFiles/GloveMouseCPP.dir/BLE/device_connector.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/BLE/device_connector.cpp || cmake_object_order_depends_target_GloveMouseCPP
-  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/BLE/device_connector.cpp.o.d
+build CMakeFiles/GyroGloveCPP.dir/BLE/device_connector.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/BLE/device_connector.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/BLE/device_connector.cpp.o.d
   FLAGS = -g -fPIC
-  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
-  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
-  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir/BLE
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir/BLE
 
-build CMakeFiles/GloveMouseCPP.dir/BLE/device_finder.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/BLE/device_finder.cpp || cmake_object_order_depends_target_GloveMouseCPP
-  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/BLE/device_finder.cpp.o.d
+build CMakeFiles/GyroGloveCPP.dir/BLE/device_finder.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/BLE/device_finder.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/BLE/device_finder.cpp.o.d
   FLAGS = -g -fPIC
-  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
-  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
-  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir/BLE
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir/BLE
 
-build CMakeFiles/GloveMouseCPP.dir/Tools/mouse_mover.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/Tools/mouse_mover.cpp || cmake_object_order_depends_target_GloveMouseCPP
-  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/Tools/mouse_mover.cpp.o.d
+build CMakeFiles/GyroGloveCPP.dir/Tools/mouse_mover.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/Tools/mouse_mover.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/Tools/mouse_mover.cpp.o.d
   FLAGS = -g -fPIC
-  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
-  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
-  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir/Tools
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir/Tools
 
-build CMakeFiles/GloveMouseCPP.dir/Handlers/device_handler.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/Handlers/device_handler.cpp || cmake_object_order_depends_target_GloveMouseCPP
-  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/Handlers/device_handler.cpp.o.d
+build CMakeFiles/GyroGloveCPP.dir/Handlers/device_handler.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/Handlers/device_handler.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/Handlers/device_handler.cpp.o.d
   FLAGS = -g -fPIC
-  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
-  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
-  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir/Handlers
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir/Handlers
 
-build CMakeFiles/GloveMouseCPP.dir/Tools/decoder.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/Tools/decoder.cpp || cmake_object_order_depends_target_GloveMouseCPP
-  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/Tools/decoder.cpp.o.d
+build CMakeFiles/GyroGloveCPP.dir/Tools/decoder.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/Tools/decoder.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/Tools/decoder.cpp.o.d
   FLAGS = -g -fPIC
-  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
-  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
-  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir/Tools
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir/Tools
 
-build CMakeFiles/GloveMouseCPP.dir/Tools/quaternion.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/Tools/quaternion.cpp || cmake_object_order_depends_target_GloveMouseCPP
-  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/Tools/quaternion.cpp.o.d
+build CMakeFiles/GyroGloveCPP.dir/Tools/quaternion.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/Tools/quaternion.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/Tools/quaternion.cpp.o.d
   FLAGS = -g -fPIC
-  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
-  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
-  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir/Tools
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir/Tools
 
-build CMakeFiles/GloveMouseCPP.dir/Handlers/Adapters/mouse_adapter.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/Handlers/Adapters/mouse_adapter.cpp || cmake_object_order_depends_target_GloveMouseCPP
-  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/Handlers/Adapters/mouse_adapter.cpp.o.d
+build CMakeFiles/GyroGloveCPP.dir/Handlers/Adapters/mouse_adapter.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/Handlers/Adapters/mouse_adapter.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/Handlers/Adapters/mouse_adapter.cpp.o.d
   FLAGS = -g -fPIC
-  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
-  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
-  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir/Handlers/Adapters
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir/Handlers/Adapters
 
-build CMakeFiles/GloveMouseCPP.dir/Tools/my_math.cpp.o: CXX_COMPILER__GloveMouseCPP_Debug /home/spyteamalex/Projects/GloveMouseCPP/Tools/my_math.cpp || cmake_object_order_depends_target_GloveMouseCPP
-  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB
-  DEP_FILE = CMakeFiles/GloveMouseCPP.dir/Tools/my_math.cpp.o.d
+build CMakeFiles/GyroGloveCPP.dir/Tools/my_math.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/Tools/my_math.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/Tools/my_math.cpp.o.d
   FLAGS = -g -fPIC
-  INCLUDES = -I/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/GloveMouseCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth
-  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
-  OBJECT_FILE_DIR = CMakeFiles/GloveMouseCPP.dir/Tools
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir/Tools
+
+build CMakeFiles/GyroGloveCPP.dir/Gui/selector_ring.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/Gui/selector_ring.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/Gui/selector_ring.cpp.o.d
+  FLAGS = -g -fPIC
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir/Gui
+
+build CMakeFiles/GyroGloveCPP.dir/Gui/app.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/Gui/app.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/Gui/app.cpp.o.d
+  FLAGS = -g -fPIC
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir/Gui
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target GloveMouseCPP
+# Link build statements for EXECUTABLE target GyroGloveCPP
 
 
 #############################################
-# Link the executable GloveMouseCPP
+# Link the executable GyroGloveCPP
 
-build GloveMouseCPP: CXX_EXECUTABLE_LINKER__GloveMouseCPP_Debug CMakeFiles/GloveMouseCPP.dir/GloveMouseCPP_autogen/mocs_compilation.cpp.o CMakeFiles/GloveMouseCPP.dir/main.cpp.o CMakeFiles/GloveMouseCPP.dir/BLE/device_connector.cpp.o CMakeFiles/GloveMouseCPP.dir/BLE/device_finder.cpp.o CMakeFiles/GloveMouseCPP.dir/Tools/mouse_mover.cpp.o CMakeFiles/GloveMouseCPP.dir/Handlers/device_handler.cpp.o CMakeFiles/GloveMouseCPP.dir/Tools/decoder.cpp.o CMakeFiles/GloveMouseCPP.dir/Tools/quaternion.cpp.o CMakeFiles/GloveMouseCPP.dir/Handlers/Adapters/mouse_adapter.cpp.o CMakeFiles/GloveMouseCPP.dir/Tools/my_math.cpp.o | /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Bluetooth.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12 || GloveMouseCPP_autogen
+build GyroGloveCPP: CXX_EXECUTABLE_LINKER__GyroGloveCPP_Debug CMakeFiles/GyroGloveCPP.dir/GyroGloveCPP_autogen/mocs_compilation.cpp.o CMakeFiles/GyroGloveCPP.dir/main.cpp.o CMakeFiles/GyroGloveCPP.dir/BLE/device_connector.cpp.o CMakeFiles/GyroGloveCPP.dir/BLE/device_finder.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/mouse_mover.cpp.o CMakeFiles/GyroGloveCPP.dir/Handlers/device_handler.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/decoder.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/quaternion.cpp.o CMakeFiles/GyroGloveCPP.dir/Handlers/Adapters/mouse_adapter.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/my_math.cpp.o CMakeFiles/GyroGloveCPP.dir/Gui/selector_ring.cpp.o CMakeFiles/GyroGloveCPP.dir/Gui/app.cpp.o | /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Bluetooth.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Widgets.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Gui.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12 || GyroGloveCPP_autogen
   FLAGS = -g
-  LINK_LIBRARIES = -Wl,-rpath,/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Bluetooth.so.5.12.12  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12
-  OBJECT_DIR = CMakeFiles/GloveMouseCPP.dir
+  LINK_LIBRARIES = -Wl,-rpath,/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Bluetooth.so.5.12.12  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Widgets.so.5.12.12  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Gui.so.5.12.12  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = GloveMouseCPP
-  TARGET_PDB = GloveMouseCPP.dbg
+  TARGET_FILE = GyroGloveCPP
+  TARGET_PDB = GyroGloveCPP.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug && /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/ccmake -S/home/spyteamalex/Projects/GloveMouseCPP -B/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug
+  COMMAND = cd /home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug && /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/ccmake -S/home/spyteamalex/Projects/GyroGloveCPP -B/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -163,7 +179,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug && /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/spyteamalex/Projects/GloveMouseCPP -B/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug
+  COMMAND = cd /home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug && /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/spyteamalex/Projects/GyroGloveCPP -B/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -172,17 +188,17 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 
 #############################################
-# Utility command for GloveMouseCPP_autogen
+# Utility command for GyroGloveCPP_autogen
 
-build GloveMouseCPP_autogen: phony CMakeFiles/GloveMouseCPP_autogen GloveMouseCPP_autogen/mocs_compilation.cpp
+build GyroGloveCPP_autogen: phony CMakeFiles/GyroGloveCPP_autogen GyroGloveCPP_autogen/mocs_compilation.cpp
 
 
 #############################################
-# Custom command for CMakeFiles/GloveMouseCPP_autogen
+# Custom command for CMakeFiles/GyroGloveCPP_autogen
 
-build CMakeFiles/GloveMouseCPP_autogen GloveMouseCPP_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}CMakeFiles/GloveMouseCPP_autogen ${cmake_ninja_workdir}GloveMouseCPP_autogen/mocs_compilation.cpp: CUSTOM_COMMAND
-  COMMAND = cd /home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug && /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake -E cmake_autogen /home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug/CMakeFiles/GloveMouseCPP_autogen.dir/AutogenInfo.json Debug
-  DESC = Automatic MOC and UIC for target GloveMouseCPP
+build CMakeFiles/GyroGloveCPP_autogen GyroGloveCPP_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}CMakeFiles/GyroGloveCPP_autogen ${cmake_ninja_workdir}GyroGloveCPP_autogen/mocs_compilation.cpp: CUSTOM_COMMAND
+  COMMAND = cd /home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug && /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake -E cmake_autogen /home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/CMakeFiles/GyroGloveCPP_autogen.dir/AutogenInfo.json Debug
+  DESC = Automatic MOC and UIC for target GyroGloveCPP
   restat = 1
 
 # =============================================================================
@@ -194,9 +210,9 @@ build CMakeFiles/GloveMouseCPP_autogen GloveMouseCPP_autogen/mocs_compilation.cp
 # =============================================================================
 
 #############################################
-# Folder: /home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug
+# Folder: /home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug
 
-build all: phony GloveMouseCPP
+build all: phony GyroGloveCPP
 
 # =============================================================================
 # Built-in targets
@@ -205,14 +221,14 @@ build all: phony GloveMouseCPP
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeParseArguments.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5Config.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Bluetooth/Qt5BluetoothConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Bluetooth/Qt5BluetoothConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeParseArguments.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5Config.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Bluetooth/Qt5BluetoothConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Bluetooth/Qt5BluetoothConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandEglPlatformIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeEglPlatformIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeGlxPlatformIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeParseArguments.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5Config.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Bluetooth/Qt5BluetoothConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Bluetooth/Qt5BluetoothConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake: phony
+build ../CMakeLists.txt /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeParseArguments.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/Linux.cmake /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5Config.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Bluetooth/Qt5BluetoothConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Bluetooth/Qt5BluetoothConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandEglPlatformIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeEglPlatformIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeGlxPlatformIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake: phony
 
 
 #############################################

@@ -2,8 +2,8 @@
 // Created by spyteamalex on 09.06.22.
 //
 
-#ifndef GLOVEMOUSECPP_MOUSE_MOVER_H
-#define GLOVEMOUSECPP_MOUSE_MOVER_H
+#ifndef GYROGLOVECPP_MOUSE_MOVER_H
+#define GYROGLOVECPP_MOUSE_MOVER_H
 
 #include <linux/uinput.h>
 
@@ -29,9 +29,9 @@ public:
 
     Mouse();
     ~Mouse();
-    void move(int dx, int dy);
-    void key(int key, bool state);
-    void scroll(int dx, int dy);
+    void move(int dx, int dy) const;
+    void setKey(int key, bool state) const;
+    void scroll(int dx, int dy) const;
 
 private:
     int fd;
@@ -40,4 +40,4 @@ private:
 };
 
 
-#endif //GLOVEMOUSECPP_MOUSE_MOVER_H
+#endif //GYROGLOVECPP_MOUSE_MOVER_H

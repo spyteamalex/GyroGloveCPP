@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.16)
 
 if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "Debug")
   file(REMOVE_RECURSE
-  "CMakeFiles/GloveMouseCPP_autogen.dir/AutogenUsed.txt"
-  "CMakeFiles/GloveMouseCPP_autogen.dir/ParseCache.txt"
-  "GloveMouseCPP_autogen"
+  "CMakeFiles/GyroGloveCPP_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/GyroGloveCPP_autogen.dir/ParseCache.txt"
+  "GyroGloveCPP_autogen"
   )
 endif()

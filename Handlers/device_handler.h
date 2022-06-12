@@ -1,5 +1,5 @@
-#ifndef GLOVEMOUSECPP_DEVICE_HANDLER_H
-#define GLOVEMOUSECPP_DEVICE_HANDLER_H
+#ifndef GYROGLOVECPP_DEVICE_HANDLER_H
+#define GYROGLOVECPP_DEVICE_HANDLER_H
 
 #include <QDateTime>
 #include <QTimer>
@@ -17,7 +17,7 @@ class DeviceHandler : public QObject
 Q_OBJECT
 
 public:
-    explicit DeviceHandler(const QBluetoothDeviceInfo&, QObject * = nullptr);
+    explicit DeviceHandler(const QBluetoothDeviceInfo&, const Mouse& m, QObject * = nullptr);
     ~DeviceHandler() override;
 
 private slots:
@@ -31,4 +31,4 @@ private:
 };
 
 
-#endif //GLOVEMOUSECPP_DEVICE_HANDLER_H
+#endif //GYROGLOVECPP_DEVICE_HANDLER_H

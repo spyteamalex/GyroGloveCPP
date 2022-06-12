@@ -50,13 +50,13 @@ private slots:
 
 private:
 
-    QLowEnergyController *m_control = nullptr;
-    QLowEnergyService *m_service = nullptr;
-    QLowEnergyDescriptor m_notificationDesc;
-    const QBluetoothDeviceInfo *m_currentDevice = nullptr;
-    QLowEnergyController::RemoteAddressType m_addressType = QLowEnergyController::PublicAddress;
+    QLowEnergyController *control = nullptr;
+    QLowEnergyService *service = nullptr;
+    QLowEnergyDescriptor notificationDesc;
+    const QBluetoothDeviceInfo *currentDevice = nullptr;
+    QLowEnergyController::RemoteAddressType _addressType = QLowEnergyController::PublicAddress;
 
-    bool m_foundOutput = false;
+    bool foundOutput = false;
     std::string prefix;
 };
 

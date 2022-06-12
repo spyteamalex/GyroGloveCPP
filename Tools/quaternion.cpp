@@ -6,22 +6,22 @@
 
 #define prefix "Quaternion"
 
-Quaternion::Quaternion(double w, double x, double y, double z) : _w(w), _x(x), _y(y), _z(z) {}
+Quaternion::Quaternion(double w, double x, double y, double z) : w(w), x(x), y(y), z(z) {}
 
-double Quaternion::w() const {
-    return _w;
+double Quaternion::getW() const {
+    return w;
 }
 
-double Quaternion::x() const {
-    return _x;
+double Quaternion::getX() const {
+    return x;
 }
 
-double Quaternion::y() const {
-    return _y;
+double Quaternion::getY() const {
+    return y;
 }
 
-double Quaternion::z() const {
-    return _z;
+double Quaternion::getZ() const {
+    return z;
 }
 
 void Quaternion::twoAxisRot(double r11, double r12, double r21, double r31, double r32, double res[]){
@@ -39,110 +39,110 @@ void Quaternion::threeAxisRot(double r11, double r12, double r21, double r31, do
 void Quaternion::quaternion2Euler(double res[], RotSeq rotSeq) const{
     switch(rotSeq){
         case zyx:
-            threeAxisRot( 2*(x()*y() + w()*z()),
-                          w()*w() + x()*x() - y()*y() - z()*z(),
-                          -2*(x()*z() - w()*y()),
-                          2*(y()*z() + w()*x()),
-                          w()*w() - x()*x() - y()*y() + z()*z(),
+            threeAxisRot( 2*(x * y + w * z),
+                          w * w + x * x - y * y - z * z,
+                          -2*(x * z - w * y),
+                          2*(y * z + w * x),
+                          w * w - x * x - y * y + z * z,
                           res);
             break;
 
         case zyz:
-            twoAxisRot(2 * (y() * z() - w() * x()),
-                       2 * (x() * z() + w() * y()),
-                       w() * w() - x() * x() - y() * y() + z() * z(),
-                       2 * (y() * z() + w() * x()),
-                       -2 * (x() * z() - w() * y()),
+            twoAxisRot(2 * (y * z - w * x),
+                       2 * (x * z + w * y),
+                       w * w - x * x - y * y + z * z,
+                       2 * (y * z + w * x),
+                       -2 * (x * z - w * y),
                        res);
             break;
 
         case zxy:
-            threeAxisRot( -2*(x()*y() - w()*z()),
-                          w()*w() - x()*x() + y()*y() - z()*z(),
-                          2*(y()*z() + w()*x()),
-                          -2*(x()*z() - w()*y()),
-                          w()*w() - x()*x() - y()*y() + z()*z(),
+            threeAxisRot( -2*(x * y - w * z),
+                          w * w - x * x + y * y - z * z,
+                          2*(y * z + w * x),
+                          -2*(x * z - w * y),
+                          w * w - x * x - y * y + z * z,
                           res);
             break;
 
         case zxz:
-            twoAxisRot(2 * (x() * z() + w() * y()),
-                       -2 * (y() * z() - w() * x()),
-                       w() * w() - x() * x() - y() * y() + z() * z(),
-                       2 * (x() * z() - w() * y()),
-                       2 * (y() * z() + w() * x()),
+            twoAxisRot(2 * (x * z + w * y),
+                       -2 * (y * z - w * x),
+                       w * w - x * x - y * y + z * z,
+                       2 * (x * z - w * y),
+                       2 * (y * z + w * x),
                        res);
             break;
 
         case yxz:
-            threeAxisRot( 2*(x()*z() + w()*y()),
-                          w()*w() - x()*x() - y()*y() + z()*z(),
-                          -2*(y()*z() - w()*x()),
-                          2*(x()*y() + w()*z()),
-                          w()*w() - x()*x() + y()*y() - z()*z(),
+            threeAxisRot( 2*(x * z + w * y),
+                          w * w - x * x - y * y + z * z,
+                          -2*(y * z - w * x),
+                          2*(x * y + w * z),
+                          w * w - x * x + y * y - z * z,
                           res);
             break;
 
         case yxy:
-            twoAxisRot(2 * (x() * y() - w() * z()),
-                       2 * (y() * z() + w() * x()),
-                       w() * w() - x() * x() + y() * y() - z() * z(),
-                       2 * (x() * y() + w() * z()),
-                       -2 * (y() * z() - w() * x()),
+            twoAxisRot(2 * (x * y - w * z),
+                       2 * (y * z + w * x),
+                       w * w - x * x + y * y - z * z,
+                       2 * (x * y + w * z),
+                       -2 * (y * z - w * x),
                        res);
             break;
 
         case yzx:
-            threeAxisRot( -2*(x()*z() - w()*y()),
-                          w()*w() + x()*x() - y()*y() - z()*z(),
-                          2*(x()*y() + w()*z()),
-                          -2*(y()*z() - w()*x()),
-                          w()*w() - x()*x() + y()*y() - z()*z(),
+            threeAxisRot( -2*(x * z - w * y),
+                          w * w + x * x - y * y - z * z,
+                          2*(x * y + w * z),
+                          -2*(y * z - w * x),
+                          w * w - x * x + y * y - z * z,
                           res);
             break;
 
         case yzy:
-            twoAxisRot(2 * (y() * z() + w() * x()),
-                       -2 * (x() * y() - w() * z()),
-                       w() * w() - x() * x() + y() * y() - z() * z(),
-                       2 * (y() * z() - w() * x()),
-                       2 * (x() * y() + w() * z()),
+            twoAxisRot(2 * (y * z + w * x),
+                       -2 * (x * y - w * z),
+                       w * w - x * x + y * y - z * z,
+                       2 * (y * z - w * x),
+                       2 * (x * y + w * z),
                        res);
             break;
 
         case xyz:
-            threeAxisRot( -2*(y()*z() - w()*x()),
-                          w()*w() - x()*x() - y()*y() + z()*z(),
-                          2*(x()*z() + w()*y()),
-                          -2*(x()*y() - w()*z()),
-                          w()*w() + x()*x() - y()*y() - z()*z(),
+            threeAxisRot( -2*(y * z - w * x),
+                          w * w - x * x - y * y + z * z,
+                          2*(x * z + w * y),
+                          -2*(x * y - w * z),
+                          w * w + x * x - y * y - z * z,
                           res);
             break;
 
         case xyx:
-            twoAxisRot(2 * (x() * y() + w() * z()),
-                       -2 * (x() * z() - w() * y()),
-                       w() * w() + x() * x() - y() * y() - z() * z(),
-                       2 * (x() * y() - w() * z()),
-                       2 * (x() * z() + w() * y()),
+            twoAxisRot(2 * (x * y + w * z),
+                       -2 * (x * z - w * y),
+                       w * w + x * x - y * y - z * z,
+                       2 * (x * y - w * z),
+                       2 * (x * z + w * y),
                        res);
             break;
 
         case xzy:
-            threeAxisRot( 2*(y()*z() + w()*x()),
-                          w()*w() - x()*x() + y()*y() - z()*z(),
-                          -2*(x()*y() - w()*z()),
-                          2*(x()*z() + w()*y()),
-                          w()*w() + x()*x() - y()*y() - z()*z(),
+            threeAxisRot( 2*(y * z + w * x),
+                          w * w - x * x + y * y - z * z,
+                          -2*(x * y - w * z),
+                          2*(x * z + w * y),
+                          w * w + x * x - y * y - z * z,
                           res);
             break;
 
         case xzx:
-            twoAxisRot(2 * (x() * z() - w() * y()),
-                       2 * (x() * y() + w() * z()),
-                       w() * w() + x() * x() - y() * y() - z() * z(),
-                       2 * (x() * z() + w() * y()),
-                       -2 * (x() * y() - w() * z()),
+            twoAxisRot(2 * (x * z - w * y),
+                       2 * (x * y + w * z),
+                       w * w + x * x - y * y - z * z,
+                       2 * (x * z + w * y),
+                       -2 * (x * y - w * z),
                        res);
             break;
         default:

@@ -1,4 +1,4 @@
-/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/ninja/linux/ninja -G Ninja -S /home/spyteamalex/Projects/GloveMouseCPP -B /home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug
+/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/ninja/linux/ninja -G Ninja -S /home/spyteamalex/Projects/GyroGloveCPP -B /home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug
+-- Build files have been written to: /home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug

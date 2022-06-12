@@ -45,7 +45,7 @@ Mouse::Mouse() {
         errorln(prefix, "ioctl(fd, UI_SET_RELBIT, REL_HWHEEL)");
 
     memset(&uidev, 0, sizeof(uidev));
-    strcpy(uidev.name, "GloveMouse");
+    strcpy(uidev.name, "GyroGlove");
     uidev.id.bustype = BUS_USB;
     uidev.id.vendor  = 0x1;
     uidev.id.product = 0x1;
@@ -64,21 +64,23 @@ Mouse::~Mouse(){
     close(fd);
 }
 
-void Mouse::move(int dx, int dy) {
+void Mouse::move(int dx, int dy) const {
     emit(fd, EV_REL, REL_X, dx);
     emit(fd, EV_REL, REL_Y, dy);
     emit(fd, EV_SYN, SYN_REPORT, 0);
 }
 
-void Mouse::scroll(int dx, int dy) {
+void Mouse::scroll(int dx, int dy) const {
     emit(fd, EV_REL, REL_HWHEEL, dx);
     emit(fd, EV_REL, REL_WHEEL, dy);
     emit(fd, EV_SYN, SYN_REPORT, 0);
 }
 
-void Mouse::key(int key, bool state){
-    if(key != LEFT && key != RIGHT && key != MIDDLE)
+void Mouse::setKey(int key, bool state) const{
+    if(key != LEFT && key != RIGHT && key != MIDDLE) {
         errorln(prefix, "unknown key");
+        return;
+    }
     emit(fd, EV_KEY, key, (int)state);
     emit(fd, EV_SYN, SYN_REPORT, 0);
 }

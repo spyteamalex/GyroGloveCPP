@@ -10,8 +10,8 @@ class DeviceFinder: public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(STATE state READ state NOTIFY stateChanged)
-//    Q_PROPERTY(QVariant devices READ devices NOTIFY devicesChanged)
+    Q_PROPERTY(STATE getState READ getState NOTIFY stateChanged)
+//    Q_PROPERTY(QVariant devices READ getDevices NOTIFY devicesChanged)
 
 public:
     enum class STATE {
@@ -24,8 +24,8 @@ public:
     DeviceFinder(QObject *parent = nullptr);
     ~DeviceFinder();
 
-    const QList<QBluetoothDeviceInfo>& devices();
-    STATE state();
+    const QList<QBluetoothDeviceInfo>& getDevices();
+    STATE getState();
 
 public slots:
     void startSearch();
@@ -40,10 +40,10 @@ signals:
     void devicesChanged();
 
 private:
-    QBluetoothDeviceDiscoveryAgent *m_deviceDiscoveryAgent;
-    QList<QBluetoothDeviceInfo> m_devices;
+    QBluetoothDeviceDiscoveryAgent *deviceDiscoveryAgent;
+    QList<QBluetoothDeviceInfo> devices;
 
-    STATE m_state = STATE::FINISHED;
+    STATE state = STATE::FINISHED;
 };
 
 #endif

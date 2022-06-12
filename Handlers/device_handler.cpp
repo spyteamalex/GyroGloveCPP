@@ -2,10 +2,10 @@
 
 #define prefix device.name().toStdString()
 
-DeviceHandler::DeviceHandler(const QBluetoothDeviceInfo &d, QObject *parent)
+DeviceHandler::DeviceHandler(const QBluetoothDeviceInfo &d, const Mouse &m, QObject *parent)
         : QObject(parent), connector(nullptr, &d),
           device(d),
-          adapter(new MouseAdapter()){
+          adapter(new MouseAdapter(m)){
     connect(&connector, &DeviceConnector::dataReceived, this, &DeviceHandler::handle);
 }
 

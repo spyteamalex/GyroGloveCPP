@@ -2,8 +2,8 @@
 // Created by spyteamalex on 09.06.22.
 //
 
-#ifndef GLOVEMOUSECPP_DECODER_H
-#define GLOVEMOUSECPP_DECODER_H
+#ifndef GYROGLOVECPP_DECODER_H
+#define GYROGLOVECPP_DECODER_H
 
 
 #include <QByteArray>
@@ -30,4 +30,4 @@ private:
 };
 
 
-#endif //GLOVEMOUSECPP_DECODER_H
+#endif //GYROGLOVECPP_DECODER_H

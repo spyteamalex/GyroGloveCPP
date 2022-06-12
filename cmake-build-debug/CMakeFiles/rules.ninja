@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: GloveMouseCPP
+# Project: GyroGloveCPP
 # Configurations: Debug
 # =============================================================================
 # =============================================================================
@@ -14,7 +14,7 @@
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__GloveMouseCPP_Debug
+rule CXX_COMPILER__GyroGloveCPP_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -24,7 +24,7 @@ rule CXX_COMPILER__GloveMouseCPP_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__GloveMouseCPP_Debug
+rule CXX_EXECUTABLE_LINKER__GyroGloveCPP_Debug
   command = $PRE_LINK && /usr/bin/c++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/spyteamalex/Projects/GloveMouseCPP -B/home/spyteamalex/Projects/GloveMouseCPP/cmake-build-debug
+  command = /home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/spyteamalex/Projects/GyroGloveCPP -B/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 

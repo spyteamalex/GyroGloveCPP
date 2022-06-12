@@ -2,8 +2,8 @@
 // Created by spyteamalex on 11.06.22.
 //
 
-#ifndef GLOVEMOUSECPP_ADAPTER_H
-#define GLOVEMOUSECPP_ADAPTER_H
+#ifndef GYROGLOVECPP_ADAPTER_H
+#define GYROGLOVECPP_ADAPTER_H
 
 
 #include "../../Tools/quaternion.h"
@@ -16,4 +16,4 @@ public:
 };
 
 
-#endif //GLOVEMOUSECPP_ADAPTER_H
+#endif //GYROGLOVECPP_ADAPTER_H
