@@ -15,6 +15,7 @@
 #include <cerrno>
 #include <linux/input.h>
 #include <linux/uinput.h>
+#include <initializer_list>
 
 /**
  * https://www.unknowncheats.me/forum/counterstrike-global-offensive/204642-tutorial-simulating-hardware-mouse-event-linux.html
@@ -23,15 +24,26 @@
 
 class Mouse{
 public:
-    static const int LEFT = BTN_LEFT;
-    static const int RIGHT = BTN_RIGHT;
-    static const int MIDDLE = BTN_MIDDLE;
+    enum Keys{
+        LEFT = BTN_LEFT,
+        RIGHT = BTN_RIGHT,
+        MIDDLE = BTN_MIDDLE,
+        PLAY_PAUSE = KEY_PLAYPAUSE,
+        TAB = KEY_TAB,
+        SHIFT = KEY_LEFTSHIFT,
+        ALT = KEY_LEFTALT,
+        VOLUME_UP = KEY_VOLUMEUP,
+        VOLUME_DOWN = KEY_VOLUMEDOWN,
+        META = KEY_LEFTMETA
+    };
 
     Mouse();
     ~Mouse();
     void move(int dx, int dy) const;
-    void setKey(int key, bool state) const;
+    void setKey(Keys key, bool state) const;
     void scroll(int dx, int dy) const;
+    void click(Keys key) const;
+    void click(std::initializer_list<Keys> list) const;
 
 private:
     int fd;

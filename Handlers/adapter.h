@@ -6,7 +6,7 @@
 #define GYROGLOVECPP_ADAPTER_H
 
 
-#include "../../Tools/quaternion.h"
+#include "../Tools/quaternion.h"
 
 class Adapter {
 public:

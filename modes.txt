@@ -1,0 +1,14 @@
+########### Mouse Mode ###########
+A click 1 - LMB
+A click 2 - RMB
+A click 3 - MMB
+A hold 1 - Moving
+A hold 2 - Dragging
+A hold 3 - Volume
+
+B click 1 - Play/Pause
+B hold 1 - Scroll
+B hold 2 - Alt+Tab
+* B hold 3 - Actions Menu(json config)
+* B hold 4 - Actions Menu2(json config)
+##################################

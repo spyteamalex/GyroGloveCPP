@@ -1,0 +1,27 @@
+{
+	"BUILD_DIR" : "/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen",
+	"CMAKE_BINARY_DIR" : "/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/spyteamalex/Projects/GyroGloveCPP",
+	"CMAKE_SOURCE_DIR" : "/home/spyteamalex/Projects/GyroGloveCPP",
+	"INCLUDE_DIR" : "/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/spyteamalex/Projects/GyroGloveCPP/Resources/icon.png",
+		"/home/spyteamalex/Projects/GyroGloveCPP/Resources/desktop.png",
+		"/home/spyteamalex/Projects/GyroGloveCPP/Resources/files.png",
+		"/home/spyteamalex/Projects/GyroGloveCPP/Resources/terminal.png",
+		"/home/spyteamalex/Projects/GyroGloveCPP/Resources/esc.png",
+		"/home/spyteamalex/Projects/GyroGloveCPP/Resources/win.png"
+	],
+	"LOCK_FILE" : "/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/CMakeFiles/GyroGloveCPP_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/CMakeFiles/GyroGloveCPP_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/spyteamalex/Projects/GyroGloveCPP/resources.qrc",
+	"VERBOSITY" : 0
+}

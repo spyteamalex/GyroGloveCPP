@@ -19,9 +19,9 @@ void DeviceHandler::handle(const QByteArray &value) {
     int i = 0;
     for (; i < data.length();) {
         int type = Decoder::getType(data.cbegin() + i);
-        if (type == Decoder::NONE) {
+        if (type == EV_NONE) {
             i++;
-        } else if (type == Decoder::MOVE) {
+        } else if (type == EV_MOVE) {
             if (i + 16 < data.length()) {
                 Quaternion q = Decoder::decodeQuaternion(data.cbegin() + i);
                 adapter->moveEvent(q);

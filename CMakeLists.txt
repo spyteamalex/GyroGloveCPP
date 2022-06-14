@@ -14,7 +14,30 @@ find_package(Qt5 COMPONENTS
         COMPONENTS Bluetooth Gui Widgets)
 
 #target_link_libraries(mytarget PRIVATE Qt5::Bluetooth)
-SET(SOURCES BLE/device_connector.cpp BLE/device_connector.h BLE/device_finder.cpp BLE/device_finder.h global.h Tools/mouse_mover.cpp Tools/mouse_mover.h Handlers/device_handler.cpp Handlers/device_handler.h Tools/decoder.cpp Tools/decoder.h Tools/quaternion.cpp Tools/quaternion.h Handlers/Adapters/mouse_adapter.cpp Handlers/Adapters/mouse_adapter.h Tools/my_math.cpp Tools/my_math.h Handlers/Adapters/adapter.h Gui/selector_ring.cpp Gui/selector_ring.h Gui/app.cpp Gui/app.h)
+SET(SOURCES
+        BLE/device_connector.cpp
+        BLE/device_connector.h
+        BLE/device_finder.cpp
+        BLE/device_finder.h
+        global.h
+        Tools/mouse_mover.cpp
+        Tools/mouse_mover.h
+        Handlers/device_handler.cpp
+        Handlers/device_handler.h
+        Tools/decoder.cpp
+        Tools/decoder.h
+        Tools/quaternion.cpp
+        Tools/quaternion.h
+        Handlers/mouse_adapter.cpp
+        Handlers/mouse_adapter.h
+        Tools/my_math.cpp
+        Tools/my_math.h
+        Handlers/adapter.h
+        Gui/selector_ring.cpp
+        Gui/selector_ring.h
+        Gui/app.cpp
+        Gui/app.h
+        resources.qrc)
 
 add_executable(GyroGloveCPP main.cpp ${SOURCES})
 target_link_libraries(GyroGloveCPP

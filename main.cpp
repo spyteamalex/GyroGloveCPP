@@ -7,11 +7,13 @@
 #include "Handlers/device_handler.h"
 #include "Gui/selector_ring.h"
 #include "Gui/app.h"
+#include <QStyle>
 
 int main(int argc, char *argv[])
 {
     QLoggingCategory::setFilterRules(QStringLiteral("qt.bluetooth* = false"));
     QApplication app(argc, argv);
+    Q_INIT_RESOURCE(resources);
 
     auto *m = new Mouse();
     QVector<DeviceHandler*> handlers;
@@ -26,6 +28,5 @@ int main(int argc, char *argv[])
         }
     });
     deviceFinder.startSearch();
-    App a(nullptr);
     return app.exec();
 }

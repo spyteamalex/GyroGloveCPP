@@ -338,6 +338,9 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeParseArguments.cmake"
+		},
+		{
+			"path" : "resources.qrc"
 		}
 	],
 	"kind" : "cmakeFiles",

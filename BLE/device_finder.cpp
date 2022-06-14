@@ -26,7 +26,7 @@ void DeviceFinder::startSearch() {
     devices.clear();
 
     deviceDiscoveryAgent->start(QBluetoothDeviceDiscoveryAgent::LowEnergyMethod);
-    logln(prefix, "Scanning for getDevices...");
+    logln(prefix, "Scanning for devices...");
 
     emit devicesChanged();
     emit stateChanged(STATE::SEARCHING);

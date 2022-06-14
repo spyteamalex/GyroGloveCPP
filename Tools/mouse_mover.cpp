@@ -24,14 +24,30 @@ Mouse::Mouse() {
 
     if(ioctl(fd, UI_SET_EVBIT, EV_KEY) < 0)
         errorln(prefix, "ioctl(fd, UI_SET_EVBIT, EV_KEY)");
+
+
+    if(ioctl(fd, UI_SET_KEYBIT, KEY_PLAYPAUSE) < 0)
+        errorln(prefix, "ioctl(fd, UI_SET_KEYBIT, KEY_PLAYPAUSE)");
+    if(ioctl(fd, UI_SET_KEYBIT, KEY_LEFTMETA) < 0)
+        errorln(prefix, "ioctl(fd, UI_SET_KEYBIT, KEY_LEFTMETA)");
+    if(ioctl(fd, UI_SET_KEYBIT, KEY_VOLUMEUP) < 0)
+        errorln(prefix, "ioctl(fd, UI_SET_KEYBIT, KEY_VOLUMEUP)");
+    if(ioctl(fd, UI_SET_KEYBIT, KEY_VOLUMEDOWN) < 0)
+        errorln(prefix, "ioctl(fd, UI_SET_KEYBIT, KEY_VOLUMEDOWN)");
+    if(ioctl(fd, UI_SET_KEYBIT, KEY_TAB) < 0)
+        errorln(prefix, "ioctl(fd, UI_SET_KEYBIT, KEY_TAB)");
+    if(ioctl(fd, UI_SET_KEYBIT, KEY_LEFTALT) < 0)
+        errorln(prefix, "ioctl(fd, UI_SET_KEYBIT, KEY_LEFTALT)");
+    if(ioctl(fd, UI_SET_KEYBIT, KEY_LEFTSHIFT) < 0)
+        errorln(prefix, "ioctl(fd, UI_SET_KEYBIT, KEY_SHIFT)");
     if(ioctl(fd, UI_SET_KEYBIT, BTN_LEFT) < 0)
         errorln(prefix, "ioctl(fd, UI_SET_KEYBIT, BTN_LEFT)");
-    if(ioctl(fd, UI_SET_KEYBIT, KEY_K) < 0)
-        errorln(prefix, "ioctl(fd, UI_SET_KEYBIT, KEY_K)");
     if(ioctl(fd, UI_SET_KEYBIT, BTN_RIGHT) < 0)
         errorln(prefix, "ioctl(fd, UI_SET_KEYBIT, BTN_RIGHT)");
     if(ioctl(fd, UI_SET_KEYBIT, BTN_MIDDLE) < 0)
         errorln(prefix, "ioctl(fd, UI_SET_KEYBIT, BTN_MIDDLE)");
+
+
 
     if(ioctl(fd, UI_SET_EVBIT, EV_REL) < 0)
         errorln(prefix, "ioctl(fd, UI_SET_EVBIT, EV_REL)");
@@ -76,11 +92,21 @@ void Mouse::scroll(int dx, int dy) const {
     emit(fd, EV_SYN, SYN_REPORT, 0);
 }
 
-void Mouse::setKey(int key, bool state) const{
-    if(key != LEFT && key != RIGHT && key != MIDDLE) {
-        errorln(prefix, "unknown key");
-        return;
-    }
+void Mouse::setKey(Keys key, bool state) const{
     emit(fd, EV_KEY, key, (int)state);
     emit(fd, EV_SYN, SYN_REPORT, 0);
+}
+
+void Mouse::click(Keys key) const{
+    setKey(key, true);
+    setKey(key, false);
+}
+
+void Mouse::click(std::initializer_list<Keys> list ) const{
+    for(Keys k : list) {
+        setKey(k, true);
+    }
+    for(Keys k : list) {
+        setKey(k, false);
+    }
 }

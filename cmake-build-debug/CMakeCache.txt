@@ -227,6 +227,9 @@ Qt5Gui_DIR:PATH=/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui
 //The directory containing a CMake configuration file for Qt5Qui.
 Qt5Qui_DIR:PATH=Qt5Qui_DIR-NOTFOUND
 
+//The directory containing a CMake configuration file for Qt5Style.
+Qt5Style_DIR:PATH=Qt5Style_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for Qt5Widgets.
 Qt5Widgets_DIR:PATH=/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets
 

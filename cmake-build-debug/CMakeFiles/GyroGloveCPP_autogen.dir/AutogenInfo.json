@@ -84,7 +84,8 @@
 		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
 		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
 		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
-		"/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeParseArguments.cmake"
+		"/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeParseArguments.cmake",
+		"/home/spyteamalex/Projects/GyroGloveCPP/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/spyteamalex/Projects/GyroGloveCPP",
 	"DEP_FILE" : "",
@@ -116,21 +117,21 @@
 			null
 		],
 		[
-			"/home/spyteamalex/Projects/GyroGloveCPP/Handlers/Adapters/adapter.h",
+			"/home/spyteamalex/Projects/GyroGloveCPP/Handlers/adapter.h",
 			"MU",
-			"WI4ZDFX3PR/moc_adapter.cpp",
-			null
-		],
-		[
-			"/home/spyteamalex/Projects/GyroGloveCPP/Handlers/Adapters/mouse_adapter.h",
-			"MU",
-			"WI4ZDFX3PR/moc_mouse_adapter.cpp",
+			"TTTNHWGBC5/moc_adapter.cpp",
 			null
 		],
 		[
 			"/home/spyteamalex/Projects/GyroGloveCPP/Handlers/device_handler.h",
 			"MU",
 			"TTTNHWGBC5/moc_device_handler.cpp",
+			null
+		],
+		[
+			"/home/spyteamalex/Projects/GyroGloveCPP/Handlers/mouse_adapter.h",
+			"MU",
+			"TTTNHWGBC5/moc_mouse_adapter.cpp",
 			null
 		],
 		[
@@ -232,12 +233,12 @@
 			null
 		],
 		[
-			"/home/spyteamalex/Projects/GyroGloveCPP/Handlers/Adapters/mouse_adapter.cpp",
+			"/home/spyteamalex/Projects/GyroGloveCPP/Handlers/device_handler.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/spyteamalex/Projects/GyroGloveCPP/Handlers/device_handler.cpp",
+			"/home/spyteamalex/Projects/GyroGloveCPP/Handlers/mouse_adapter.cpp",
 			"MU",
 			null
 		],

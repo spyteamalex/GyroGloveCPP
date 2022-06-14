@@ -7,8 +7,22 @@
 
 
 #include <QLabel>
+#include <QIcon>
 #include "../Tools/my_math.h"
 #include "../global.h"
+
+class SelectorRingItem{
+private:
+    QIcon icon;
+    std::function<void (void)> action;
+public:
+
+    SelectorRingItem(QIcon icon, std::function<void(void)> action);
+
+    [[nodiscard]] const QIcon &getIcon() const;
+
+    [[nodiscard]] const std::function<void(void)> &getAction() const;
+};
 
 class SelectorRing : public QWidget {
     Q_OBJECT
@@ -18,23 +32,36 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 public:
-    SelectorRing(double innerRadius, double outerRadius, int sectorCount, int startAngle, int finishAngle,
-                 QWidget *parent = nullptr);
+
+    explicit SelectorRing(
+            double innerRadius = INNER_RADIUS,
+            double outerRadius = OUTER_RADIUS,
+            double startAngle = START_ANGLE,
+            double finishAngle = FINISH_ANGLE,
+            QSize iconSize = ICON_SIZE,
+            QWidget *parent = nullptr);
 
 private:
 
     double innerRadius;
     double outerRadius;
-    int sectorCount;
-    int startAngle;
-    int finishAngle;
-    int selected;
+    double startAngle;
+    double finishAngle;
+    double selected;
+    QSize iconSize;
+    static bool shown;
+
+private:
+
+    QVector<SelectorRingItem> data;
+
+private:
 
     QColor selectedSectorBorder = Qt::white;
     QBrush selectedSectorColor = Qt::white;
     QColor sectorBorder = Qt::white;
     QBrush sectorColor = Qt::black;
-    int sectorBuf = 0;
+    double sectorBuf = 0;
 
     void drawSector(int i, QPainter &painter, bool isSelected);
 
@@ -48,29 +75,25 @@ public:
 
     void setOuterRadius(double v);
 
-    [[nodiscard]] int getSectorCount() const;
+    [[nodiscard]] double getStartAngle() const;
 
-    void setSectorCount(int v);
+    void setStartAngle(double v);
 
-    [[nodiscard]] int getStartAngle() const;
+    [[nodiscard]] double getFinishAngle() const;
 
-    void setStartAngle(int v);
-
-    [[nodiscard]] int getFinishAngle() const;
-
-    void setFinishAngle(int v);
+    void setFinishAngle(double v);
 
     [[nodiscard]] int getSelected() const;
 
     void setSelected(int v);
 
-    [[nodiscard]] const QColor &getSectorBorderSelected() const;
+    [[nodiscard]] const QColor &getSelectedSectorBorder() const;
 
-    void setSectorBorderSelected(const QColor &v);
+    void setSelectedSectorBorder(const QColor &v);
 
-    [[nodiscard]] const QBrush &getSectorColorSelected() const;
+    [[nodiscard]] const QBrush &getSelectedSectorColor() const;
 
-    void setSectorColorSelected(const QBrush &v);
+    void setSelectedSectorColor(const QBrush &v);
 
     [[nodiscard]] const QColor &getSectorBorder() const;
 
@@ -80,11 +103,21 @@ public:
 
     void setSectorColor(const QBrush &v);
 
-    [[nodiscard]] int getSectorDistance() const;
+    [[nodiscard]] double getSectorDistance() const;
 
-    void setSectorDistance(int v);
+    void setSectorDistance(double v);
 
-    void show();
+    [[nodiscard]] const QVector<SelectorRingItem> &getData() const;
+
+    void setData(const QVector<SelectorRingItem> &v);
+
+    [[nodiscard]] const QSize &getIconSize() const;
+
+    void setIconSize(const QSize &v);
+
+    bool show();
+
+    void close();
 };
 
 

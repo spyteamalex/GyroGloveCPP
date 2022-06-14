@@ -8,7 +8,7 @@
 #include "../BLE/device_connector.h"
 #include "../global.h"
 #include "../Tools/decoder.h"
-#include "Adapters/mouse_adapter.h"
+#include "mouse_adapter.h"
 #include <chrono>
 
 class DeviceHandler : public QObject

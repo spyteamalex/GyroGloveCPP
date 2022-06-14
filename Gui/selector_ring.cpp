@@ -3,9 +3,10 @@
 //
 
 #include <QPainter>
+#include <utility>
 #include "selector_ring.h"
 
-QPainterPath drawRing(int x, int y, double r1, double r2, int frm, int ang){
+QPainterPath drawRing(int x, int y, double r1, double r2, double frm, double ang){
     QPainterPath path = QPainterPath(QPointF(x + r2 * cos(frm * PI / 180), y - r2 * sin(frm * PI / 180)));
     path.arcTo(x - r2, y - r2, 2 * r2, 2 * r2, frm, ang);
     path.arcTo(x - r1, y - r1, 2 * r1, 2 * r1, frm + ang, -ang);
@@ -17,9 +18,11 @@ void SelectorRing::paintEvent(QPaintEvent *event) {
     QWidget::paintEvent(event);
     QPainter painter(this);
     painter.fillRect(0, 0, width(), height(), Qt::transparent);
-    for(int i = 0; i < sectorCount; i++)
+    for(int i = 0; i < data.size(); i++)
         drawSector(i, painter, i == selected);
 }
+
+bool SelectorRing::shown = false;
 
 //void SelectorRing::redraw() {
 //
@@ -27,7 +30,7 @@ void SelectorRing::paintEvent(QPaintEvent *event) {
 //}
 
 void SelectorRing::drawSector(int i, QPainter &painter, bool isSelected = false) {
-    int ang = (finishAngle - startAngle) / sectorCount;
+    double ang = (finishAngle - startAngle) / data.size();
     if(isSelected){
         painter.setPen(selectedSectorBorder);
         painter.setBrush(selectedSectorColor);
@@ -36,6 +39,13 @@ void SelectorRing::drawSector(int i, QPainter &painter, bool isSelected = false)
         painter.setBrush(sectorColor);
     }
     painter.drawPath(drawRing(width() / 2, height() / 2, innerRadius, outerRadius, startAngle + (ang * i + sectorBuf), ang - 2 * sectorBuf));
+
+    double iconPosAngle = startAngle + (ang * i + sectorBuf) + (ang - 2 * sectorBuf) / 2.0;
+    iconPosAngle *= PI / 180;
+    QPointF iconPos = QPointF(
+            width() / 2.0 + (innerRadius+outerRadius) / 2.0 * cos(iconPosAngle) - iconSize.width()/2.0,
+            height() / 2.0 - (innerRadius+outerRadius) / 2.0 * sin(iconPosAngle) - iconSize.height()/2.0);
+    painter.drawPixmap(iconPos, data.at(i).getIcon().pixmap(iconSize));
 }
 
 double SelectorRing::getInnerRadius() const {
@@ -46,32 +56,28 @@ double SelectorRing::getOuterRadius() const {
     return outerRadius;
 }
 
-int SelectorRing::getSectorCount() const {
-    return sectorCount;
-}
-
-int SelectorRing::getStartAngle() const {
+double SelectorRing::getStartAngle() const {
     return startAngle;
 }
 
-int SelectorRing::getFinishAngle() const {
+double SelectorRing::getFinishAngle() const {
     return finishAngle;
 }
 
-const QColor &SelectorRing::getSectorBorderSelected() const {
+const QColor &SelectorRing::getSelectedSectorBorder() const {
     return selectedSectorBorder;
 }
 
-void SelectorRing::setSectorBorderSelected(const QColor &v) {
+void SelectorRing::setSelectedSectorBorder(const QColor &v) {
     SelectorRing::selectedSectorBorder = v;
     update();
 }
 
-const QBrush &SelectorRing::getSectorColorSelected() const {
+const QBrush &SelectorRing::getSelectedSectorColor() const {
     return selectedSectorColor;
 }
 
-void SelectorRing::setSectorColorSelected(const QBrush &v) {
+void SelectorRing::setSelectedSectorColor(const QBrush &v) {
     SelectorRing::selectedSectorColor = v;
     update();
 }
@@ -94,11 +100,11 @@ void SelectorRing::setSectorColor(const QBrush &v) {
     update();
 }
 
-int SelectorRing::getSectorDistance() const {
+double SelectorRing::getSectorDistance() const {
     return sectorBuf;
 }
 
-void SelectorRing::setSectorDistance(int v) {
+void SelectorRing::setSectorDistance(double v) {
     SelectorRing::sectorBuf = v;
     update();
 }
@@ -113,17 +119,12 @@ void SelectorRing::setOuterRadius(double v) {
     update();
 }
 
-void SelectorRing::setSectorCount(int v) {
-    SelectorRing::sectorCount = v;
-    update();
-}
-
-void SelectorRing::setStartAngle(int v) {
+void SelectorRing::setStartAngle(double v) {
     SelectorRing::startAngle = v;
     update();
 }
 
-void SelectorRing::setFinishAngle(int v) {
+void SelectorRing::setFinishAngle(double v) {
     SelectorRing::finishAngle = v;
     update();
 }
@@ -137,12 +138,12 @@ int SelectorRing::getSelected() const {
     return selected;
 }
 
-SelectorRing::SelectorRing(double innerRadius, double outerRadius,
-                           int sectorCount, int startAngle, int finishAngle, QWidget *parent) : QWidget(parent),
+SelectorRing::SelectorRing(double innerRadius, double outerRadius, double startAngle, double finishAngle, QSize iconSize, QWidget *parent) : QWidget(parent),
                                                                                              innerRadius(innerRadius),
                                                                                              outerRadius(outerRadius),
-                                                                                             sectorCount(sectorCount),
                                                                                              startAngle(startAngle),
+                                                                                             iconSize(iconSize),
+                                                                                             selected(0),
                                                                                              finishAngle(finishAngle) {
     setWindowFlags(Qt::WindowType::WindowStaysOnTopHint
             | Qt::WindowType::FramelessWindowHint
@@ -151,8 +152,63 @@ SelectorRing::SelectorRing(double innerRadius, double outerRadius,
     setAttribute(Qt::WidgetAttribute::WA_TranslucentBackground);
     setAttribute(Qt::WidgetAttribute::WA_TransparentForMouseEvents);
     setAttribute(Qt::WidgetAttribute::WA_ForceDisabled);
+
+#ifdef SECTOR_DISTANCE
+    sectorBuf = SECTOR_DISTANCE;
+#endif
+#ifdef SECTOR_COLOR
+    sectorColor = SECTOR_COLOR;
+#endif
+#ifdef SECTOR_BORDER
+    sectorBorder = SECTOR_BORDER;
+#endif
+#ifdef SELECTED_SECTOR_BORDER
+    selectedSectorBorder = SELECTED_SECTOR_BORDER;
+#endif
+#ifdef SELECTED_SECTOR_COLOR
+    selectedSectorColor = SELECTED_SECTOR_COLOR;
+#endif
+
 }
 
-void SelectorRing::show() {
+bool SelectorRing::show() {
+    if(shown)
+        return false;
     QWidget::showFullScreen();
+    shown = true;
+    return true;
+}
+
+void SelectorRing::close() {
+    QWidget::close();
+    shown = false;
+}
+
+const QVector<SelectorRingItem> &SelectorRing::getData() const {
+    return data;
+}
+
+void SelectorRing::setData(const QVector<SelectorRingItem> &v) {
+    SelectorRing::data = v;
+    update();
+}
+
+const QSize &SelectorRing::getIconSize() const {
+    return iconSize;
+}
+
+void SelectorRing::setIconSize(const QSize &v) {
+    SelectorRing::iconSize = v;
+    update();
+}
+
+const QIcon &SelectorRingItem::getIcon() const {
+    return icon;
+}
+
+SelectorRingItem::SelectorRingItem(QIcon icon, std::function<void(void)> action) : icon(std::move(icon)),
+                                                                                                 action(std::move(action)) {}
+
+const std::function<void(void)> &SelectorRingItem::getAction() const {
+    return action;
 }
