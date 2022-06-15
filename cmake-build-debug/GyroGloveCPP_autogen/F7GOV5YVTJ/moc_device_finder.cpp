@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_DeviceFinder_t {
-    QByteArrayData data[17];
-    char stringdata0[212];
+    QByteArrayData data[16];
+    char stringdata0[203];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,19 +43,18 @@ QT_MOC_LITERAL(8, 105, 9), // "scanError"
 QT_MOC_LITERAL(9, 115, 37), // "QBluetoothDeviceDiscoveryAgen..."
 QT_MOC_LITERAL(10, 153, 5), // "error"
 QT_MOC_LITERAL(11, 159, 12), // "scanFinished"
-QT_MOC_LITERAL(12, 172, 8), // "getState"
-QT_MOC_LITERAL(13, 181, 5), // "STATE"
-QT_MOC_LITERAL(14, 187, 8), // "FINISHED"
-QT_MOC_LITERAL(15, 196, 5), // "ERROR"
-QT_MOC_LITERAL(16, 202, 9) // "SEARCHING"
+QT_MOC_LITERAL(12, 172, 5), // "STATE"
+QT_MOC_LITERAL(13, 178, 8), // "FINISHED"
+QT_MOC_LITERAL(14, 187, 5), // "ERROR"
+QT_MOC_LITERAL(15, 193, 9) // "SEARCHING"
 
     },
     "DeviceFinder\0stateChanged\0\0"
     "DeviceFinder::STATE\0devicesChanged\0"
     "startSearch\0addDevice\0QBluetoothDeviceInfo\0"
     "scanError\0QBluetoothDeviceDiscoveryAgent::Error\0"
-    "error\0scanFinished\0getState\0STATE\0"
-    "FINISHED\0ERROR\0SEARCHING"
+    "error\0scanFinished\0STATE\0FINISHED\0"
+    "ERROR\0SEARCHING"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,8 +65,8 @@ static const uint qt_meta_data_DeviceFinder[] = {
        0,       // classname
        0,    0, // classinfo
        6,   14, // methods
-       1,   56, // properties
-       1,   60, // enums/sets
+       0,    0, // properties
+       1,   56, // enums/sets
        0,    0, // constructors
        0,       // flags
        2,       // signalCount
@@ -92,19 +91,13 @@ static const uint qt_meta_data_DeviceFinder[] = {
     QMetaType::Void, 0x80000000 | 9,   10,
     QMetaType::Void,
 
- // properties: name, type, flags
-      12, 0x80000000 | 13, 0x00495009,
-
- // properties: notify_signal_id
-       0,
-
  // enums: name, alias, flags, count, data
-      13,   13, 0x2,    3,   65,
+      12,   12, 0x2,    3,   61,
 
  // enum data: key, value
-      14, uint(DeviceFinder::STATE::FINISHED),
-      15, uint(DeviceFinder::STATE::ERROR),
-      16, uint(DeviceFinder::STATE::SEARCHING),
+      13, uint(DeviceFinder::STATE::FINISHED),
+      14, uint(DeviceFinder::STATE::ERROR),
+      15, uint(DeviceFinder::STATE::SEARCHING),
 
        0        // eod
 };
@@ -151,19 +144,6 @@ void DeviceFinder::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
             }
         }
     }
-#ifndef QT_NO_PROPERTIES
-    else if (_c == QMetaObject::ReadProperty) {
-        auto *_t = static_cast<DeviceFinder *>(_o);
-        Q_UNUSED(_t)
-        void *_v = _a[0];
-        switch (_id) {
-        case 0: *reinterpret_cast< STATE*>(_v) = _t->getState(); break;
-        default: break;
-        }
-    } else if (_c == QMetaObject::WriteProperty) {
-    } else if (_c == QMetaObject::ResetProperty) {
-    }
-#endif // QT_NO_PROPERTIES
 }
 
 QT_INIT_METAOBJECT const QMetaObject DeviceFinder::staticMetaObject = { {
@@ -203,23 +183,6 @@ int DeviceFinder::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 6;
     }
-#ifndef QT_NO_PROPERTIES
-    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
-            || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
-        qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
-    } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 1;
-    } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 1;
-    } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 1;
-    } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 1;
-    } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 1;
-    }
-#endif // QT_NO_PROPERTIES
     return _id;
 }
 

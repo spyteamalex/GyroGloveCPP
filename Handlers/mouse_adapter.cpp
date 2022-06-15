@@ -145,7 +145,54 @@ void MouseAdapter::loop() {
     }
 }
 
+void MouseAdapter::parseConfig(const QString& f){
+    menu1.clear();
+    menu2.clear();
+    QString val;
+    QFile file(f);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    QJsonDocument d = QJsonDocument::fromJson(val.toUtf8());
+    if(!d.isObject()) return;
+    QJsonObject dObject = d.object();
+    std::string user = exec("echo -n $USER");
+    if(user == "root"){
+        user = exec("echo -n $SUDO_USER");
+    }
+    if(dObject.contains("menu1")){
+        QJsonArray m1 = dObject["menu1"].toArray();
+        for(QJsonValueRef i : m1){
+            if(!i.isObject()) continue;
+            QJsonObject item = i.toObject();
+
+            std::string cmd = item["command"].toString("").toStdString();
+            menu1.append(SelectorRingItem(QIcon(item["icon"].toString("")), [cmd, user](){
+                if(!cmd.empty()) {
+                    exec("sudo -u " + user + " " + cmd + " & ");
+                }
+            }));
+        }
+    }
+    if(dObject.contains("menu2")){
+        QJsonArray m2 = dObject["menu2"].toArray();
+        for(QJsonValueRef i : m2){
+            if(!i.isObject()) continue;
+            QJsonObject item = i.toObject();
+
+            std::string cmd = item["command"].toString("").toStdString();
+            menu2.append(SelectorRingItem(QIcon(item["icon"].toString("")), [cmd, user](){
+                if(!cmd.empty())
+                    exec("sudo -u "+user+" "+cmd+" & ");
+            }));
+        }
+    }
+}
+
 MouseAdapter::MouseAdapter(const Mouse& m) : m(m) {
+
+    parseConfig(CONFIG);
+
     connect(&timer, &QTimer::timeout, this, &MouseAdapter::loop);
     timer.setInterval(10);
     timer.start();
@@ -217,13 +264,13 @@ void MouseAdapter::clickEvent(int event, int count, int button) {
 
     CASE(EV_PRESS, 3, ID_B) {
         state = SelectAction;
-        //todo переписать в конфиг
         selector = new SelectorRing(225,335,-90,270,QSize(80,80));
+        selector->setData(menu1);
         selector->show();
     }
     CASE(EV_RELEASE, 3, ID_B) {
         //todo сделать выполнение
-        println(prefix, selector->getSelected());
+        menu1[selector->getSelected()].getAction()();
         selector->close();
     }
 

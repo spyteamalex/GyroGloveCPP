@@ -31,6 +31,8 @@
 #define FINISH_ANGLE 270
 #define ICON_SIZE QSize(80,80)
 
+#define CONFIG "/etc/opt/gyroglove/config.json"
+
 #define ID_A 1
 #define ID_B 2
 

@@ -221,6 +221,9 @@ Qt5Bluetooth_DIR:PATH=/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Bl
 //The directory containing a CMake configuration file for Qt5Core.
 Qt5Core_DIR:PATH=/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Core
 
+//The directory containing a CMake configuration file for Qt5DBus.
+Qt5DBus_DIR:PATH=/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5DBus
+
 //The directory containing a CMake configuration file for Qt5Gui.
 Qt5Gui_DIR:PATH=/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Gui
 

@@ -340,7 +340,30 @@
 			"path" : "/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeParseArguments.cmake"
 		},
 		{
-			"path" : "resources.qrc"
+			"isExternal" : true,
+			"path" : "/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5DBus/Qt5DBusConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5DBus/Qt5DBusConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5DBus/Qt5DBusConfigExtras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5DBus/Qt5DBusMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/MacroAddFileDependencies.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeParseArguments.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",

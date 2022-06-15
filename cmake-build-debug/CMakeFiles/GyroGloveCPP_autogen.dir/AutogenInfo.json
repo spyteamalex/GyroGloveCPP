@@ -85,7 +85,12 @@
 		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
 		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
 		"/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeParseArguments.cmake",
-		"/home/spyteamalex/Projects/GyroGloveCPP/resources.qrc"
+		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5DBus/Qt5DBusConfigVersion.cmake",
+		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5DBus/Qt5DBusConfig.cmake",
+		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5DBus/Qt5DBusConfigExtras.cmake",
+		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5DBus/Qt5DBusMacros.cmake",
+		"/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/MacroAddFileDependencies.cmake",
+		"/home/spyteamalex/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22/Modules/CMakeParseArguments.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/spyteamalex/Projects/GyroGloveCPP",
 	"DEP_FILE" : "",
@@ -102,12 +107,6 @@
 			"/home/spyteamalex/Projects/GyroGloveCPP/BLE/device_finder.h",
 			"MU",
 			"F7GOV5YVTJ/moc_device_finder.cpp",
-			null
-		],
-		[
-			"/home/spyteamalex/Projects/GyroGloveCPP/Gui/app.h",
-			"MU",
-			"EHIEGSSRCT/moc_app.cpp",
 			null
 		],
 		[
@@ -159,6 +158,18 @@
 			null
 		],
 		[
+			"/home/spyteamalex/Projects/GyroGloveCPP/Tools/tools.h",
+			"MU",
+			"WKHKOO7AB7/moc_tools.cpp",
+			null
+		],
+		[
+			"/home/spyteamalex/Projects/GyroGloveCPP/dbus_adapter.h",
+			"MU",
+			"EWIEGA46WW/moc_dbus_adapter.cpp",
+			null
+		],
+		[
 			"/home/spyteamalex/Projects/GyroGloveCPP/global.h",
 			"MU",
 			"EWIEGA46WW/moc_global.cpp",
@@ -168,7 +179,14 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_BLUETOOTH_LIB", "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_BLUETOOTH_LIB",
+		"QT_CORE_LIB",
+		"QT_DBUS_LIB",
+		"QT_GUI_LIB",
+		"QT_WIDGETS_LIB"
+	],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -184,6 +202,7 @@
 		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth",
 		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui",
 		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets",
+		"/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtDBus",
 		"/usr/include",
 		"/usr/include/c++/11",
 		"/usr/include/x86_64-linux-gnu/c++/11",
@@ -226,7 +245,6 @@
 			"MU",
 			null
 		],
-		[ "/home/spyteamalex/Projects/GyroGloveCPP/Gui/app.cpp", "MU", null ],
 		[
 			"/home/spyteamalex/Projects/GyroGloveCPP/Gui/selector_ring.cpp",
 			"MU",
@@ -259,6 +277,12 @@
 		],
 		[
 			"/home/spyteamalex/Projects/GyroGloveCPP/Tools/quaternion.cpp",
+			"MU",
+			null
+		],
+		[ "/home/spyteamalex/Projects/GyroGloveCPP/Tools/tools.cpp", "MU", null ],
+		[
+			"/home/spyteamalex/Projects/GyroGloveCPP/dbus_adapter.cpp",
 			"MU",
 			null
 		],

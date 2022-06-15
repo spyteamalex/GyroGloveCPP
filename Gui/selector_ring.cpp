@@ -212,3 +212,8 @@ SelectorRingItem::SelectorRingItem(QIcon icon, std::function<void(void)> action)
 const std::function<void(void)> &SelectorRingItem::getAction() const {
     return action;
 }
+
+SelectorRingItem::SelectorRingItem(SelectorRingItem &&a) noexcept : icon(std::move(a.icon)),
+                                                           action(std::move(a.action))  {}
+
+SelectorRingItem::SelectorRingItem(const SelectorRingItem &a) = default;

@@ -9,6 +9,6 @@ A hold 3 - Volume
 B click 1 - Play/Pause
 B hold 1 - Scroll
 B hold 2 - Alt+Tab
-* B hold 3 - Actions Menu(json config)
+B hold 3 - Actions Menu(json config)
 * B hold 4 - Actions Menu2(json config)
 ##################################

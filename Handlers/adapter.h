@@ -16,4 +16,4 @@ public:
 };
 
 
-#endif //GYROGLOVECPP_ADAPTER_H
+#endif

@@ -2,13 +2,13 @@
 #include <QtEndian>
 #include <QRandomGenerator>
 #include "../global.h"
+#define prefix device->name().toStdString()
 
 
 DeviceConnector::DeviceConnector(QObject *parent, const QBluetoothDeviceInfo *device) :
         QObject(parent),
-        foundOutput(false) {
-    connectDevice(device);
-}
+        device(device),
+        foundOutput(false) {}
 
 DeviceConnector::~DeviceConnector() {
     delete service;
@@ -27,21 +27,20 @@ void DeviceConnector::setAddressType(AddressType type) {
     }
 }
 
-DeviceConnector::AddressType DeviceConnector::addressType() const {
+DeviceConnector::AddressType DeviceConnector::getAddressType() const {
     if (_addressType == QLowEnergyController::RandomAddress)
         return DeviceConnector::AddressType::RandomAddress;
 
     return DeviceConnector::AddressType::PublicAddress;
 }
 
-void DeviceConnector::connectDevice(const QBluetoothDeviceInfo *device) {
+void DeviceConnector::connectDevice() {
     currentDevice = device;
 
     if (control) {
-        disconnectService();
+        disconnect();
     }
     if (currentDevice) {
-        prefix = device->name().toStdString();
         control = QLowEnergyController::createCentral(*currentDevice, this);
         control->setRemoteAddressType(_addressType);
         connect(control, &QLowEnergyController::serviceDiscovered,
@@ -52,14 +51,17 @@ void DeviceConnector::connectDevice(const QBluetoothDeviceInfo *device) {
         connect(control,
                 static_cast<void (QLowEnergyController::*)(QLowEnergyController::Error)>(&QLowEnergyController::error),
                 this, [this](QLowEnergyController::Error error) {
-                    errorln(prefix, "Cannot connect finishAngle remote device.");
+                    errorln(prefix, "Cannot connect to remote device.");
+                    setState(State::Error);
                 });
         connect(control, &QLowEnergyController::connected, this, [this]() {
             logln(prefix, "Controller connected. Search services...");
+            setState(State::Connected);
             control->discoverServices();
         });
         connect(control, &QLowEnergyController::disconnected, this, [this]() {
             errorln(prefix, "Controller disconnected");
+            if(getState() == State::Connected) setState(State::Disconnected);
         });
 
         control->connectToDevice();
@@ -68,7 +70,7 @@ void DeviceConnector::connectDevice(const QBluetoothDeviceInfo *device) {
 
 void DeviceConnector::serviceDiscovered(const QBluetoothUuid &gatt) {
     if (gatt == QBluetoothUuid(SERVICE)) {
-        logln(prefix, "Service discovered. Waiting for service scan finishAngle be done...");
+        logln(prefix, "Service discovered. Waiting for service scan to be done...");
         foundOutput = true;
     }
 }
@@ -91,6 +93,8 @@ void DeviceConnector::serviceScanDone() {
         service->discoverDetails();
     } else {
         errorln(prefix, "Service not found.");
+        setState(State::BadDevice);
+        disconnect();
     }
 }
 
@@ -104,12 +108,17 @@ void DeviceConnector::serviceStateChanged(QLowEnergyService::ServiceState s) {
             const QLowEnergyCharacteristic outChar = service->characteristic(QBluetoothUuid(CHARACTERISTIC));
             if (!outChar.isValid()) {
                 errorln(prefix, "Data not found.");
+                setState(State::BadDevice);
                 break;
             }
 
             notificationDesc = outChar.descriptor(QBluetoothUuid::ClientCharacteristicConfiguration);
-            if (notificationDesc.isValid())
+            if (notificationDesc.isValid()) {
                 service->writeDescriptor(notificationDesc, QByteArray::fromHex("0100"));
+                setState(State::ServiceConnected);
+            }else{
+                setState(State::Error);
+            }
 
             break;
         }
@@ -127,15 +136,15 @@ void DeviceConnector::receiveData(const QLowEnergyCharacteristic &c, const QByte
 
 void DeviceConnector::confirmedDescriptorWrite(const QLowEnergyDescriptor &d, const QByteArray &value) {
     if (d.isValid() && d == notificationDesc && value == QByteArray::fromHex("0000")) {
+        setState(State::Error);
         control->disconnectFromDevice();
         delete service;
         service = nullptr;
     }
 }
 
-void DeviceConnector::disconnectService() {
+void DeviceConnector::disconnectDevice() {
     foundOutput = false;
-
     if (notificationDesc.isValid() && service
         && notificationDesc.value() == QByteArray::fromHex("0100")) {
         service->writeDescriptor(notificationDesc, QByteArray::fromHex("0000"));
@@ -151,9 +160,11 @@ void DeviceConnector::disconnectService() {
     }
 }
 
-bool DeviceConnector::alive() const {
-    if (service)
-        return service->state() == QLowEnergyService::ServiceDiscovered;
+DeviceConnector::State DeviceConnector::getState() const {
+    return state;
+}
 
-    return false;
+void DeviceConnector::setState(DeviceConnector::State s) {
+    state = s;
+    emit stateChanged(s);
 }

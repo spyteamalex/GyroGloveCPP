@@ -11,7 +11,7 @@ set(CMAKE_PREFIX_PATH "/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/")
 find_package(Qt5 COMPONENTS
         Core
         REQUIRED
-        COMPONENTS Bluetooth Gui Widgets)
+        COMPONENTS Bluetooth Gui Widgets DBus)
 
 #target_link_libraries(mytarget PRIVATE Qt5::Bluetooth)
 SET(SOURCES
@@ -35,9 +35,10 @@ SET(SOURCES
         Handlers/adapter.h
         Gui/selector_ring.cpp
         Gui/selector_ring.h
-        Gui/app.cpp
-        Gui/app.h
-        resources.qrc)
+        Tools/tools.h
+        Tools/tools.cpp
+        dbus_adapter.cpp
+        dbus_adapter.h)
 
 add_executable(GyroGloveCPP main.cpp ${SOURCES})
 target_link_libraries(GyroGloveCPP
@@ -45,5 +46,6 @@ target_link_libraries(GyroGloveCPP
         Qt5::Bluetooth
         Qt5::Gui
         Qt5::Widgets
+        Qt5::DBus
         )
 

@@ -12,31 +12,33 @@ class DeviceConnector : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(bool alive READ alive NOTIFY aliveChanged)
-    Q_PROPERTY(AddressType addressType READ addressType WRITE setAddressType)
-    Q_PROPERTY(QByteArray data NOTIFY dataReceived)
-
 public:
     enum class AddressType {
         PublicAddress,
         RandomAddress
     };
+    enum class State {
+        Connected,      //Connection finished
+        Disconnected,
+        BadDevice,      //Characteristic not found
+        ServiceConnected,    //Characteristic found,
+        Error
+    };
     Q_ENUM(AddressType)
+    Q_ENUM(State)
 
-    DeviceConnector(QObject *parent = nullptr, const QBluetoothDeviceInfo *device = nullptr);
-    ~DeviceConnector();
+    explicit DeviceConnector(QObject *parent = nullptr, const QBluetoothDeviceInfo *device = nullptr);
+    ~DeviceConnector() override;
 
-    void connectDevice(const QBluetoothDeviceInfo *device);
+    void connectDevice();
     void setAddressType(AddressType type);
-    AddressType addressType() const;
+    [[nodiscard]] AddressType getAddressType() const;
+    [[nodiscard]] State getState() const;
+    void disconnectDevice();
 
-    bool alive() const;
 signals:
-    void aliveChanged();
+    void stateChanged(State);
     void dataReceived(const QByteArray&);
-
-public slots:
-    void disconnectService();
 
 private slots:
     void serviceDiscovered(const QBluetoothUuid &);
@@ -57,7 +59,10 @@ private:
     QLowEnergyController::RemoteAddressType _addressType = QLowEnergyController::PublicAddress;
 
     bool foundOutput = false;
-    std::string prefix;
+    State state = State::Disconnected;
+    const QBluetoothDeviceInfo* device;
+
+    void setState(State s);
 };
 
 #endif

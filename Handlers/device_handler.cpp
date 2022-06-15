@@ -3,13 +3,18 @@
 #define prefix device.name().toStdString()
 
 DeviceHandler::DeviceHandler(const QBluetoothDeviceInfo &d, const Mouse &m, QObject *parent)
-        : QObject(parent), connector(nullptr, &d),
+        : QObject(parent),
+          connector(nullptr, &d),
           device(d),
           adapter(new MouseAdapter(m)){
     connect(&connector, &DeviceConnector::dataReceived, this, &DeviceHandler::handle);
+    connect(&connector, &DeviceConnector::stateChanged, this, [this](DeviceConnector::State s){
+        emit stateChanged(s);
+    });
 }
 
 DeviceHandler::~DeviceHandler(){
+    connector.disconnectDevice();
     delete adapter;
 }
 
@@ -40,4 +45,20 @@ void DeviceHandler::handle(const QByteArray &value) {
     for (; i < data.length(); i++)
         data2 += data.at(i);
     data = data2;
+}
+
+const QBluetoothDeviceInfo &DeviceHandler::getDevice() const {
+    return device;
+}
+
+void DeviceHandler::disconnectDevice() {
+    connector.disconnectDevice();
+}
+
+void DeviceHandler::connectDevice() {
+    connector.connectDevice();
+}
+
+DeviceConnector::State DeviceHandler::getState() const {
+    return connector.getState();
 }

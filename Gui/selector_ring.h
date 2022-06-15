@@ -17,7 +17,11 @@ private:
     std::function<void (void)> action;
 public:
 
-    SelectorRingItem(QIcon icon, std::function<void(void)> action);
+    SelectorRingItem(QIcon icon = QIcon(), std::function<void(void)> action = [](){});
+
+    SelectorRingItem(SelectorRingItem&&) noexcept;
+
+    SelectorRingItem(const SelectorRingItem&);
 
     [[nodiscard]] const QIcon &getIcon() const;
 

@@ -10,9 +10,6 @@ class DeviceFinder: public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(STATE getState READ getState NOTIFY stateChanged)
-//    Q_PROPERTY(QVariant devices READ getDevices NOTIFY devicesChanged)
-
 public:
     enum class STATE {
         FINISHED,

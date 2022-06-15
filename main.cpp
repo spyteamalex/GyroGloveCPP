@@ -6,14 +6,14 @@
 #include "global.h"
 #include "Handlers/device_handler.h"
 #include "Gui/selector_ring.h"
-#include "Gui/app.h"
 #include <QStyle>
+#include <QDBusConnection>
 
 int main(int argc, char *argv[])
 {
     QLoggingCategory::setFilterRules(QStringLiteral("qt.bluetooth* = false"));
+    QLoggingCategory::setFilterRules(QStringLiteral("*WARNING* = false"));
     QApplication app(argc, argv);
-    Q_INIT_RESOURCE(resources);
 
     auto *m = new Mouse();
     QVector<DeviceHandler*> handlers;
@@ -28,5 +28,6 @@ int main(int argc, char *argv[])
         }
     });
     deviceFinder.startSearch();
+    
     return app.exec();
 }

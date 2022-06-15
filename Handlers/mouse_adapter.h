@@ -15,6 +15,12 @@
 #include <cmath>
 #include <QTimer>
 #include <QStyle>
+#include <QFile>
+#include <QJsonDocument>
+#include "../Tools/tools.h"
+#include <QJsonObject>
+#include <QJsonArray>
+
 
 /**
  * https://askdev.ru/q/suschestvuet-li-algoritm-preobrazovaniya-kvaternionnyh-vrascheniy-v-uglovye-vrascheniya-eylera-112001/
@@ -75,6 +81,8 @@ private:
     const Mouse &m;
     double lastX = 0, lastY = 0;
     SelectorRing *selector = nullptr;
+    QVector<SelectorRingItem> menu1;
+    QVector<SelectorRingItem> menu2;
 
 
     State state = None;
@@ -93,6 +101,8 @@ public:
     void moveEvent(const Quaternion &quaternion) override;
 
     void clickEvent(int event, int count, int button) override;
+
+    void parseConfig(const QString& file);
 };
 
 
