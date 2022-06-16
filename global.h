@@ -12,7 +12,7 @@
 
 #define SERVICE (quint16)0xFFE0
 #define CHARACTERISTIC (quint16)0xFFE1
-#define NAME "GloveMouse" //todo change
+#define DEVICE_NAME "GloveMouse" //todo change
 
 #define EV_NONE 0
 #define EV_CLICK 1
@@ -32,6 +32,9 @@
 #define ICON_SIZE QSize(80,80)
 
 #define CONFIG "/etc/opt/gyroglove/config.json"
+#define SERVICE_NAME "org.spyteamalex.GyroGlove"
+#define PATH "/org/spyteamalex/GyroGlove"
+#define INTERFACE "org.spyteamalex.GyroGlove"
 
 #define ID_A 1
 #define ID_B 2

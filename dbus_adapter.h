@@ -9,28 +9,30 @@
 #include <QObject>
 #include "BLE/device_finder.h"
 #include "Handlers/device_handler.h"
+#include <QDBusConnection>
 
-class DBusAdapter : QObject {
+#define prefix "DBusAdapter"
+
+class DBusAdapter : public QObject {
     Q_OBJECT
 
 private:
     Mouse m;
     QVector<DeviceHandler*> handlers;
     DeviceFinder deviceFinder;
-
-private slots:
-    void searchFinished();
-
-signals:
-    void messageSent(QString s);
-
+    bool tryConnect(const QBluetoothAddress& address);
 
 public:
-    void connect(const QString& address, bool find = false, int attempts = 2);
-    void disconnect(const QString& name);
-    void reconnect(const QString& name);
+signals:
+    Q_SCRIPTABLE void messageSent(QString s);
 
-    virtual ~DBusAdapter();
+public slots:
+    Q_SCRIPTABLE void update();
+    Q_SCRIPTABLE void disconnectAll();
+    Q_SCRIPTABLE QString getDevices();
+public:
+    explicit DBusAdapter(QObject *parent = nullptr);
+    ~DBusAdapter() override;
 };
 
 

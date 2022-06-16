@@ -204,9 +204,6 @@ MouseAdapter::~MouseAdapter(){
 
 void MouseAdapter::moveEvent(const Quaternion &q) {
     setAnglesByQuaternion(q);
-//    logln(prefix,
-//            "move " + tos(q.getWidth()) + " " + tos(q.getX()) + " " + tos(q.getY()) + " " +
-//            tos(q.getZ()));
 }
 
 #define __ 0)||(true
@@ -221,7 +218,6 @@ void MouseAdapter::clickEvent(int event, int count, int button) {
         }
         drop();
     }
-    logln(prefix, tos(event)+ " " +tos(count)+" " + tos(button));
 
     CASE(EV_PRESS, 1, ID_A) {
         state = Move;

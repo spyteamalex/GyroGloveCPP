@@ -1,6 +1,6 @@
 #include "device_handler.h"
 
-#define prefix device.name().toStdString()
+#define prefix device.address().toString().toStdString()
 
 DeviceHandler::DeviceHandler(const QBluetoothDeviceInfo &d, const Mouse &m, QObject *parent)
         : QObject(parent),
@@ -19,7 +19,9 @@ DeviceHandler::~DeviceHandler(){
 }
 
 void DeviceHandler::handle(const QByteArray &value) {
-    assert(adapter != nullptr);
+    if(adapter == nullptr){
+        return;
+    }
     data += value;
     int i = 0;
     for (; i < data.length();) {

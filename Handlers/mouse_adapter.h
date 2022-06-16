@@ -58,8 +58,8 @@ private:
     static constexpr double ya_k = -9.3968;
     static constexpr double xb_k = 1.65;
     static constexpr double yb_k = 2.285;
-    static constexpr double xStep_k = -0.15;
-    static constexpr double yStep_k = -0.15;
+    static constexpr double xStep_k = -0.10;
+    static constexpr double yStep_k = -0.10;
 
     double xDebt_m = 0, yDebt_m = 0;
     double xDebt_s = 0, yDebt_s = 0;

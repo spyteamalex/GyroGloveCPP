@@ -2,7 +2,7 @@
 #include <QtEndian>
 #include <QRandomGenerator>
 #include "../global.h"
-#define prefix device->name().toStdString()
+#define prefix device->address().toString().toStdString()
 
 
 DeviceConnector::DeviceConnector(QObject *parent, const QBluetoothDeviceInfo *device) :
@@ -41,6 +41,7 @@ void DeviceConnector::connectDevice() {
         disconnect();
     }
     if (currentDevice) {
+        logln(prefix, "Connecting to device...");
         control = QLowEnergyController::createCentral(*currentDevice, this);
         control->setRemoteAddressType(_addressType);
         connect(control, &QLowEnergyController::serviceDiscovered,
@@ -61,7 +62,7 @@ void DeviceConnector::connectDevice() {
         });
         connect(control, &QLowEnergyController::disconnected, this, [this]() {
             errorln(prefix, "Controller disconnected");
-            if(getState() == State::Connected) setState(State::Disconnected);
+            if(getState() != State::Error && getState() != State::BadDevice) setState(State::Disconnected);
         });
 
         control->connectToDevice();
@@ -144,6 +145,7 @@ void DeviceConnector::confirmedDescriptorWrite(const QLowEnergyDescriptor &d, co
 }
 
 void DeviceConnector::disconnectDevice() {
+    logln(prefix, "Disconnecting to device...");
     foundOutput = false;
     if (notificationDesc.isValid() && service
         && notificationDesc.value() == QByteArray::fromHex("0100")) {
