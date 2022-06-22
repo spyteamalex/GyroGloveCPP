@@ -209,6 +209,7 @@ void MouseAdapter::moveEvent(const Quaternion &q) {
 #define __ 0)||(true
 #define CASE(ev, cnt, btn) if((event == (ev)) && (count == (cnt)) && (button == (btn)))
 void MouseAdapter::clickEvent(int event, int count, int button) {
+    println(prefix, tos(event)+" "+tos(count)+" "+tos(button));
     CASE(EV_RELEASE, __, __) {
         state = None;
     }

@@ -13,7 +13,6 @@
 int main(int argc, char *argv[])
 {
     QLoggingCategory::setFilterRules(QStringLiteral("qt.bluetooth* = false"));
-    QLoggingCategory::setFilterRules(QStringLiteral("*WARNING* = false"));
     QApplication app(argc, argv);
 
     DBusAdapter dBusAdapter;

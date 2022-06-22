@@ -49,7 +49,7 @@ private:
 
     //Scroll constants
     static constexpr double xa_s = -46.984;
-    static constexpr double ya_s = -46.984;
+    static constexpr double ya_s = 46.984;
     static constexpr double xb_s = 2.285;
     static constexpr double yb_s = 2.285;
 
