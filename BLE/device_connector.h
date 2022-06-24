@@ -27,7 +27,7 @@ public:
     Q_ENUM(AddressType)
     Q_ENUM(State)
 
-    explicit DeviceConnector(QObject *parent = nullptr, const QBluetoothDeviceInfo *device = nullptr);
+    explicit DeviceConnector(QObject *parent, const QBluetoothDeviceInfo *device);
     ~DeviceConnector() override;
 
     void connectDevice();

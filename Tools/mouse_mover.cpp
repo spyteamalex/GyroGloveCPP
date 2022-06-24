@@ -5,7 +5,7 @@
 #define prefix "mouse mover"
 
 void emit(int fd, int type, int code, int value) {
-    struct input_event ev;
+    struct input_event ev{};
     memset(&ev, 0, sizeof(struct input_event));
     ev.type = type;
     ev.code = code;

@@ -164,6 +164,12 @@
 			null
 		],
 		[
+			"/home/spyteamalex/Projects/GyroGloveCPP/app.h",
+			"MU",
+			"EWIEGA46WW/moc_app.cpp",
+			null
+		],
+		[
 			"/home/spyteamalex/Projects/GyroGloveCPP/dbus_adapter.h",
 			"MU",
 			"EWIEGA46WW/moc_dbus_adapter.cpp",
@@ -281,6 +287,7 @@
 			null
 		],
 		[ "/home/spyteamalex/Projects/GyroGloveCPP/Tools/tools.cpp", "MU", null ],
+		[ "/home/spyteamalex/Projects/GyroGloveCPP/app.cpp", "MU", null ],
 		[
 			"/home/spyteamalex/Projects/GyroGloveCPP/dbus_adapter.cpp",
 			"MU",

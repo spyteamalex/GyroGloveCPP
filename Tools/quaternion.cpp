@@ -6,7 +6,7 @@
 
 #define prefix "Quaternion"
 
-Quaternion::Quaternion(double w, double x, double y, double z) : w(w), x(x), y(y), z(z) {}
+Quaternion::Quaternion(QObject * parent, double w, double x, double y, double z) : w(w), x(x), y(y), z(z), QObject(parent) {}
 
 double Quaternion::getW() const {
     return w;

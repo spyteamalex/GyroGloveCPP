@@ -42,47 +42,51 @@ private:
     };
 
     //Move constants
-    static constexpr double xa_m = -939.68;
-    static constexpr double ya_m = -939.68;
-    static constexpr double xb_m = 2.285;
-    static constexpr double yb_m = 2.285;
+    double xa_m;
+    double ya_m;
+    double xb_m;
+    double yb_m;
 
     //Scroll constants
-    static constexpr double xa_s = -46.984;
-    static constexpr double ya_s = 46.984;
-    static constexpr double xb_s = 2.285;
-    static constexpr double yb_s = 2.285;
+    double xa_s;
+    double ya_s;
+    double xb_s;
+    double yb_s;
+
+    //Selection constants(ex. SelectingRing)
+    double dx_sel;
+    double dy_sel;
 
     //Key constants
-    static constexpr double xa_k = -0.3559;
-    static constexpr double ya_k = -9.3968;
-    static constexpr double xb_k = 1.65;
-    static constexpr double yb_k = 2.285;
-    static constexpr double xStep_k = -0.10;
-    static constexpr double yStep_k = -0.10;
+//    double xa_k = -0.3559;
+//    double ya_k = -9.3968;
+//    double xb_k = 1.65;
+//    double yb_k = 2.285;
+//    double xStep_k = -0.10;
+//    double yStep_k = -0.10;
 
     double xDebt_m = 0, yDebt_m = 0;
     double xDebt_s = 0, yDebt_s = 0;
-    double xDebt_k = 0, yDebt_k = 0;
+//    double xDebt_k = 0, yDebt_k = 0;
     int lastXValue_k = 0;
     int lastYValue_k = 0;
     int getXSpeed(double v);
     int getYSpeed(double v);
     int getXScroll(double v);
     int getYScroll(double v);
-    int getXKeySignal(double v);
-    int getYKeySignal(double v);
+//    int getXKeySignal(double v);
+//    int getYKeySignal(double v);
     int getXStepDiff(double v);
     int getYStepDiff(double v);
-    int getXStep(double v);
-    int getYStep(double v);
+    int getXStep(double v) const;
+    int getYStep(double v) const;
     void drop();
 
     const Mouse &m;
     double lastX = 0, lastY = 0;
     SelectorRing *selector = nullptr;
-    QVector<SelectorRingItem> menu1;
-    QVector<SelectorRingItem> menu2;
+    QVector<SelectorRingItem*> menu1;
+    QVector<SelectorRingItem*> menu2;
 
 
     State state = None;
@@ -90,9 +94,9 @@ private:
 private slots:
     void loop();
 public:
-    MouseAdapter(const Mouse &m);
+    explicit MouseAdapter(QObject *, const Mouse &m);
 
-    ~MouseAdapter();
+    ~MouseAdapter() override;
 
     void setAnglesByQuaternion(const Quaternion &q);
 
@@ -102,7 +106,7 @@ public:
 
     void clickEvent(int event, int count, int button) override;
 
-    void parseConfig(const QString& file);
+    void initFromConfig(const QString& f);
 };
 
 

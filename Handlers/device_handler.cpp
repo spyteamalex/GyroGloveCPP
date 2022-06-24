@@ -4,9 +4,9 @@
 
 DeviceHandler::DeviceHandler(const QBluetoothDeviceInfo &d, const Mouse &m, QObject *parent)
         : QObject(parent),
-          connector(nullptr, &d),
+          connector(this, &d),
           device(d),
-          adapter(new MouseAdapter(m)){
+          adapter(new MouseAdapter(this, m)){
     connect(&connector, &DeviceConnector::dataReceived, this, &DeviceHandler::handle);
     connect(&connector, &DeviceConnector::stateChanged, this, [this](DeviceConnector::State s){
         emit stateChanged(s);
@@ -30,7 +30,7 @@ void DeviceHandler::handle(const QByteArray &value) {
             i++;
         } else if (type == EV_MOVE) {
             if (i + 16 < data.length()) {
-                Quaternion q = Decoder::decodeQuaternion(data.cbegin() + i);
+                Quaternion q = Decoder::decodeQuaternion(data.cbegin() + i, this);
                 adapter->moveEvent(q);
                 i += 17;
             } else break;

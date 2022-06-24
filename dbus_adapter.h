@@ -31,7 +31,7 @@ public slots:
     Q_SCRIPTABLE void disconnectAll();
     Q_SCRIPTABLE QString getDevices();
 public:
-    explicit DBusAdapter(QObject *parent = nullptr);
+    explicit DBusAdapter(QObject *parent);
     ~DBusAdapter() override;
 };
 

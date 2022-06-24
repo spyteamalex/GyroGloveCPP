@@ -7,6 +7,7 @@
 #include "Handlers/device_handler.h"
 #include "Gui/selector_ring.h"
 #include "dbus_adapter.h"
+#include "app.h"
 #include <QStyle>
 #include <QDBusConnection>
 
@@ -15,8 +16,9 @@ int main(int argc, char *argv[])
     QLoggingCategory::setFilterRules(QStringLiteral("qt.bluetooth* = false"));
     QApplication app(argc, argv);
 
-    DBusAdapter dBusAdapter;
+    DBusAdapter dBusAdapter(&app);
     dBusAdapter.update();
 
-    return app.exec();
+    new App(&app);
+    return QApplication::exec();
 }

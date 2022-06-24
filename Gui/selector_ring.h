@@ -11,39 +11,31 @@
 #include "../Tools/my_math.h"
 #include "../global.h"
 
-class SelectorRingItem{
+class SelectorRingItem : public QObject{
+    Q_OBJECT
+
 private:
     QIcon icon;
     std::function<void (void)> action;
 public:
 
-    SelectorRingItem(QIcon icon = QIcon(), std::function<void(void)> action = [](){});
+    explicit SelectorRingItem(QObject *, QIcon icon = QIcon(), std::function<void(void)> action = [](){});
 
     SelectorRingItem(SelectorRingItem&&) noexcept;
 
-    SelectorRingItem(const SelectorRingItem&);
+    SelectorRingItem(const SelectorRingItem &ringItem);
 
     [[nodiscard]] const QIcon &getIcon() const;
 
     [[nodiscard]] const std::function<void(void)> &getAction() const;
 };
 
-class SelectorRing : public QWidget {
+class SelectorRing : public QWidget{
     Q_OBJECT
 
 
 protected:
     void paintEvent(QPaintEvent *event) override;
-
-public:
-
-    explicit SelectorRing(
-            double innerRadius = INNER_RADIUS,
-            double outerRadius = OUTER_RADIUS,
-            double startAngle = START_ANGLE,
-            double finishAngle = FINISH_ANGLE,
-            QSize iconSize = ICON_SIZE,
-            QWidget *parent = nullptr);
 
 private:
 
@@ -51,15 +43,11 @@ private:
     double outerRadius;
     double startAngle;
     double finishAngle;
-    double selected;
+    int selected;
     QSize iconSize;
     static bool shown;
 
-private:
-
-    QVector<SelectorRingItem> data;
-
-private:
+    QVector<SelectorRingItem*> data;
 
     QColor selectedSectorBorder = Qt::white;
     QBrush selectedSectorColor = Qt::white;
@@ -70,6 +58,12 @@ private:
     void drawSector(int i, QPainter &painter, bool isSelected);
 
 public:
+    explicit SelectorRing(
+            double innerRadius = INNER_RADIUS_DEFAULT,
+            double outerRadius = OUTER_RADIUS_DEFAULT,
+            double startAngle = START_ANGLE_DEFAULT,
+            double finishAngle = FINISH_ANGLE_DEFAULT,
+            QSize iconSize = QSize(ICON_WIDTH_DEFAULT, ICON_HEIGHT_DEFAULT));
 
     [[nodiscard]] double getInnerRadius() const;
 
@@ -111,9 +105,9 @@ public:
 
     void setSectorDistance(double v);
 
-    [[nodiscard]] const QVector<SelectorRingItem> &getData() const;
+    [[nodiscard]] const QVector<SelectorRingItem*> &getData() const;
 
-    void setData(const QVector<SelectorRingItem> &v);
+    void setData(const QVector<SelectorRingItem*> &v);
 
     [[nodiscard]] const QSize &getIconSize() const;
 

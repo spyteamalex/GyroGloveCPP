@@ -44,7 +44,7 @@ bool DBusAdapter::tryConnect(const QBluetoothAddress& address) {
     bool found = false;
     for(const auto &i : deviceFinder.getDevices()){
         if(i.address() == address){
-            auto *hh = new DeviceHandler(i, m);
+            auto *hh = new DeviceHandler(i, m, this);
             handlers += hh;
             hh->connectDevice();
             DeviceHandler::connect(hh, &DeviceHandler::stateChanged, this, [this, hh](DeviceConnector::State s){
@@ -71,7 +71,7 @@ DBusAdapter::~DBusAdapter() {
     qDeleteAll(handlers);
 }
 
-DBusAdapter::DBusAdapter(QObject *parent) : QObject(parent) {
+DBusAdapter::DBusAdapter(QObject *parent) : QObject(parent), deviceFinder(parent) {
     QDBusConnection connection = QDBusConnection::sessionBus();
     connection.registerService(SERVICE_NAME);
     connection.registerObject(PATH, INTERFACE,this, QDBusConnection::ExportScriptableContents);

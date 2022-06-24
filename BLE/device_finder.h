@@ -18,7 +18,7 @@ public:
     };
     Q_ENUM(STATE)
 
-    DeviceFinder(QObject *parent = nullptr);
+    DeviceFinder(QObject *parent);
     ~DeviceFinder();
 
     const QList<QBluetoothDeviceInfo>& getDevices();

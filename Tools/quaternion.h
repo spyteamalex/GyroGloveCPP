@@ -5,11 +5,12 @@
 #ifndef GYROGLOVECPP_QUATERNION_H
 #define GYROGLOVECPP_QUATERNION_H
 #include <cmath>
+#include <QObject>
 #include "../global.h"
 
 
-class Quaternion {
-
+class Quaternion : public QObject {
+    Q_OBJECT
 
 private:
     double w,x,y,z;
@@ -29,7 +30,7 @@ public:
 
     enum RotSeq{zyx, zyz, zxy, zxz, yxz, yxy, yzx, yzy, xyz, xyx, xzy,xzx};
 
-    Quaternion(double w, double x, double y, double z);
+    Quaternion(QObject *, double w, double x, double y, double z);
 
     void quaternion2Euler(double *res, RotSeq rotSeq) const;
 };

@@ -153,6 +153,14 @@ build CMakeFiles/GyroGloveCPP.dir/dbus_adapter.cpp.o: CXX_COMPILER__GyroGloveCPP
   OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
   OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir
 
+build CMakeFiles/GyroGloveCPP.dir/app.cpp.o: CXX_COMPILER__GyroGloveCPP_Debug /home/spyteamalex/Projects/GyroGloveCPP/app.cpp || cmake_object_order_depends_target_GyroGloveCPP
+  DEFINES = -DQT_BLUETOOTH_LIB -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GyroGloveCPP.dir/app.cpp.o.d
+  FLAGS = -g -fPIC
+  INCLUDES = -I/home/spyteamalex/Projects/GyroGloveCPP/cmake-build-debug/GyroGloveCPP_autogen/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtCore -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/./mkspecs/linux-g++ -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtBluetooth -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtGui -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets -isystem /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/include/QtDBus
+  OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir
+  OBJECT_FILE_DIR = CMakeFiles/GyroGloveCPP.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target GyroGloveCPP
@@ -161,7 +169,7 @@ build CMakeFiles/GyroGloveCPP.dir/dbus_adapter.cpp.o: CXX_COMPILER__GyroGloveCPP
 #############################################
 # Link the executable GyroGloveCPP
 
-build GyroGloveCPP: CXX_EXECUTABLE_LINKER__GyroGloveCPP_Debug CMakeFiles/GyroGloveCPP.dir/GyroGloveCPP_autogen/mocs_compilation.cpp.o CMakeFiles/GyroGloveCPP.dir/main.cpp.o CMakeFiles/GyroGloveCPP.dir/BLE/device_connector.cpp.o CMakeFiles/GyroGloveCPP.dir/BLE/device_finder.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/mouse_mover.cpp.o CMakeFiles/GyroGloveCPP.dir/Handlers/device_handler.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/decoder.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/quaternion.cpp.o CMakeFiles/GyroGloveCPP.dir/Handlers/mouse_adapter.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/my_math.cpp.o CMakeFiles/GyroGloveCPP.dir/Gui/selector_ring.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/tools.cpp.o CMakeFiles/GyroGloveCPP.dir/dbus_adapter.cpp.o | /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Bluetooth.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Widgets.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5DBus.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Gui.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12 || GyroGloveCPP_autogen
+build GyroGloveCPP: CXX_EXECUTABLE_LINKER__GyroGloveCPP_Debug CMakeFiles/GyroGloveCPP.dir/GyroGloveCPP_autogen/mocs_compilation.cpp.o CMakeFiles/GyroGloveCPP.dir/main.cpp.o CMakeFiles/GyroGloveCPP.dir/BLE/device_connector.cpp.o CMakeFiles/GyroGloveCPP.dir/BLE/device_finder.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/mouse_mover.cpp.o CMakeFiles/GyroGloveCPP.dir/Handlers/device_handler.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/decoder.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/quaternion.cpp.o CMakeFiles/GyroGloveCPP.dir/Handlers/mouse_adapter.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/my_math.cpp.o CMakeFiles/GyroGloveCPP.dir/Gui/selector_ring.cpp.o CMakeFiles/GyroGloveCPP.dir/Tools/tools.cpp.o CMakeFiles/GyroGloveCPP.dir/dbus_adapter.cpp.o CMakeFiles/GyroGloveCPP.dir/app.cpp.o | /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Bluetooth.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Widgets.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5DBus.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Gui.so.5.12.12 /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12 || GyroGloveCPP_autogen
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Bluetooth.so.5.12.12  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Widgets.so.5.12.12  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5DBus.so.5.12.12  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Gui.so.5.12.12  /home/spyteamalex/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so.5.12.12
   OBJECT_DIR = CMakeFiles/GyroGloveCPP.dir

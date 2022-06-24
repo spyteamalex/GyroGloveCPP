@@ -15,7 +15,7 @@ public:
 
     static int getType(const QByteArray::const_iterator &begin);
 
-    static Quaternion decodeQuaternion(const QByteArray::const_iterator &begin);
+    static Quaternion decodeQuaternion(const QByteArray::const_iterator &begin, QObject *);
 
     static QPair<int, int> decodeClickDetails(const QByteArray::const_iterator &begin);
 

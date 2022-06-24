@@ -16,7 +16,7 @@ class DeviceHandler : public QObject{
 Q_OBJECT
 
 public:
-    explicit DeviceHandler(const QBluetoothDeviceInfo&, const Mouse& m, QObject * = nullptr);
+    explicit DeviceHandler(const QBluetoothDeviceInfo&, const Mouse& m, QObject *);
     ~DeviceHandler() override;
     [[nodiscard]] const QBluetoothDeviceInfo &getDevice() const;
     void connectDevice();

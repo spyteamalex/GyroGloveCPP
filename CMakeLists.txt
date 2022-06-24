@@ -38,7 +38,7 @@ SET(SOURCES
         Tools/tools.h
         Tools/tools.cpp
         dbus_adapter.cpp
-        dbus_adapter.h)
+        dbus_adapter.h app.cpp app.h)
 
 add_executable(GyroGloveCPP main.cpp ${SOURCES})
 target_link_libraries(GyroGloveCPP

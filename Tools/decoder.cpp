@@ -11,8 +11,9 @@ int32_t Decoder::ba2i32(QByteArray::const_iterator begin){
     return a;
 }
 
-Quaternion Decoder::decodeQuaternion(const QByteArray::const_iterator &begin) {
+Quaternion Decoder::decodeQuaternion(const QByteArray::const_iterator &begin, QObject * parent) {
     return {
+            parent,
             ba2i32(begin + 1) / 100000000.0,
             ba2i32(begin + 5) / 100000000.0,
             ba2i32(begin + 9) / 100000000.0,
